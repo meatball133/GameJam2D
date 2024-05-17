@@ -102,6 +102,4 @@ one_way_collision = true
 position = Vector2(500, -185)
 zoom = Vector2(1.75, 1.75)
 script = ExtResource("3_k7yvx")
-snap_x = 525.0
-x_switch = 275
 snap_speed = 0.125
