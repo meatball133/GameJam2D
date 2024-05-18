@@ -29,7 +29,8 @@ func on_click():
 		health += 1
 		# particles and sound effect
 		on_time.emitting = true
-		sound_effect_click.playing = true
+		if health < health_goal:
+			sound_effect_click.playing = true
 	else:
 		health = 0
 		# fail particles
@@ -40,5 +41,5 @@ func on_click():
 	if health >= health_goal:
 		# completed particles
 		completed_time.emitting = true
-		#$CompletionSound.play()
+		$AudioStreamPlayer2D2.play()
 		get_parent().leaf_momento()
