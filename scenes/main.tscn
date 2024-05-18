@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=26 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
@@ -11,8 +11,11 @@
 [ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
-[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
+
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
+[ext_resource type="PackedScene" uid="uid://b35b14uqsx4le" path="res://scenes/leaf.tscn" id="10_1hk61"]
+[ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="11_2ow0m"]
+[ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
@@ -172,7 +175,7 @@ region_enabled = true
 region_rect = Rect2(0, 176.985, 2000, 94)
 
 [node name="Branch" type="StaticBody2D" parent="."]
-position = Vector2(486, -122)
+position = Vector2(588, -279)
 rotation = -0.0349066
 scale = Vector2(4.67514, 1)
 
@@ -185,7 +188,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch5" type="StaticBody2D" parent="."]
-position = Vector2(457, -263)
+position = Vector2(454, -131)
 scale = Vector2(2.06527, 1)
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Branch5"]
@@ -198,6 +201,17 @@ scale = Vector2(0.146, 0.3)
 texture = ExtResource("9_0sjd1")
 
 [node name="Leaf" parent="Branch5" instance=ExtResource("10_1hk61")]
+position = Vector2(45.0304, -39)
+
+[node name="ArrowSign" type="Sprite2D" parent="Branch5"]
+position = Vector2(26.6309, -22)
+scale = Vector2(0.0385009, 0.0795148)
+texture = ExtResource("11_2ow0m")
+
+[node name="BeatSign" type="Sprite2D" parent="Branch5"]
+position = Vector2(-9.19978, -37)
+scale = Vector2(0.0650984, 0.134446)
+texture = ExtResource("12_bplls")
 
 [node name="Branch2" type="StaticBody2D" parent="."]
 position = Vector2(-508, -176)
@@ -258,7 +272,7 @@ autoplay = true
 script = ExtResource("7_hkprh")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(249, -137)
+position = Vector2(351, -294)
 curve = SubResource("Curve2D_n88ln")
 
 [node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox") instance=ExtResource("13_537f5")]
@@ -268,4 +282,5 @@ NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+position = Vector2(102, -157)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
