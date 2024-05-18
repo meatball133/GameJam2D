@@ -55,3 +55,7 @@ beat={
 [physics]
 
 2d/default_gravity=1960.0
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.646661, 0.843296, 0.986323, 1)
