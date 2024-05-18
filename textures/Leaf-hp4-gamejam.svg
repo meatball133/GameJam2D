@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+	<title>Leaf-gamejam</title>
+	<style>
+		.s0 { fill: #55c765;stroke: #316637;stroke-linecap: round;stroke-linejoin: round;stroke-width: 2 } 
+		.s1 { fill: none;stroke: #3e7954;stroke-miterlimit:100;stroke-width: 3 } 
+		.s2 { fill: none;stroke: #3e7954;stroke-miterlimit:100;stroke-width: 2 } 
+	</style>
+	<path id="Background" class="s0" d="m9.7 65l6.3-13c0 0-2.4-10.5-0.2-18.9 2.8-10.3 10.2-19.1 10.2-19.1 5.8-4.3 21-6 21-6h9c0-0.6 2 6.1 2 8 0 9.2-0.7 10 0 9 0.2-0.2-1.8 7.8-4 10-0.3 0.3-16.3 12.4-18.7 12.8-5.3 1-17.5 3.4-16.3 3.2z"/>
+	<path id="Lager 1" class="s1" d="m19 49l14-20 12-9 5-4"/>
+	<path id="Lager 2" class="s2" d="m50 25l-7-3-4-6"/>
+	<path id="Lager 3" class="s2" d="m44 31l-7-4-5-7"/>
+	<path id="Lager 4" class="s2" d="m36 37l-6-3-4-7"/>
+	<path id="Lager 5" class="s2" d="m32 44l-6-4-4-7"/>
+</svg>
