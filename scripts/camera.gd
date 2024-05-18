@@ -9,6 +9,7 @@ extends Camera2D
 @export var dash = 100.0
 
 var target := global_position
+var max_y := global_position.y
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -23,5 +24,8 @@ func _process(delta: float) -> void:
 		target.y = player.global_position.y
 	if player.global_position.y - global_position.y > y_limit:
 		target.y = player.global_position.y
+	
+	# no
+	target.y = clamp(target.y, -1000000, max_y)
 	
 	global_position = lerp(global_position, target, snap_speed)
