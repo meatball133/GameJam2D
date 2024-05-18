@@ -29,6 +29,8 @@ func _physics_process(delta: float) -> void:
 		
 	# Handle slap
 	if Input.is_action_just_pressed("slap"):
+		$AudioStreamPlayer2D.play()
+		sprite.stop()
 		sprite.play("slap")
 
 	# Get the input direction and handle the movement/deceleration.

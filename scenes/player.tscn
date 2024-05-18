@@ -1,0 +1,145 @@
+[gd_scene load_steps=18 format=3 uid="uid://ck805qe0dbvpv"]
+
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_rfyct"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="2_s3jvb"]
+[ext_resource type="Texture2D" uid="uid://6va2lcx8wvns" path="res://textures/slime_spritesheet.png" id="3_n2nog"]
+[ext_resource type="AudioStream" uid="uid://cmmdxdq1rgwx2" path="res://music/slap.mp3" id="4_p4w87"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
+size = Vector2(30, 24)
+
+[sub_resource type="Curve" id="Curve_hoofo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.345, 0.125), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_crsqh"]
+offsets = PackedFloat32Array(0, 0.375, 1)
+colors = PackedColorArray(0.231373, 0.576471, 0.776471, 1, 0.215686, 0.556863, 0.764706, 1, 0.496308, 0.760208, 0.933047, 1)
+
+[sub_resource type="Animation" id="Animation_r1phm"]
+resource_name = "walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.1, 0.1), Vector2(0.11, 0.09)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(3, 3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_aitah"]
+_data = {
+"walk": SubResource("Animation_r1phm")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wmtk5"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(0, 0, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0wjx"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(0, 512, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c3yvr"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(1536, 0, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7a0fd"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(1536, 512, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n01wh"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(1536, 1024, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_57a6x"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(1536, 1536, 1536, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mgh6"]
+atlas = ExtResource("3_n2nog")
+region = Rect2(1536, 2048, 1536, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j0hf6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wmtk5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0wjx")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c3yvr")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_7a0fd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n01wh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_57a6x")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_8mgh6")
+}],
+"loop": false,
+"name": &"slap",
+"speed": 40.0
+}]
+
+[node name="Player" type="CharacterBody2D"]
+floor_snap_length = 25.0
+script = ExtResource("1_rfyct")
+jump_veloicty = 750.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-50, 2)
+shape = SubResource("RectangleShape2D_2u52f")
+
+[node name="Trail" type="Line2D" parent="."]
+top_level = true
+z_index = -1
+position = Vector2(-50, 15)
+width = 100.0
+width_curve = SubResource("Curve_hoofo")
+gradient = SubResource("Gradient_crsqh")
+script = ExtResource("2_s3jvb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_aitah")
+}
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+sprite_frames = SubResource("SpriteFrames_j0hf6")
+animation = &"slap"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_p4w87")
+volume_db = 8.0
