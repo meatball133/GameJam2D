@@ -1,8 +1,8 @@
-
-[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
-
+[gd_scene load_steps=21 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
+[ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
+[ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
 [ext_resource type="Texture2D" uid="uid://b2fra0u4apoq0" path="res://textures/Placeholder-Dirt-Ground-Gamejam.svg" id="3_17gvx"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
@@ -12,8 +12,8 @@
 [ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
 [ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="6_a1ps7"]
-[ext_resource type="Texture2D" uid="uid://drmbfcv0456qa" path="res://textures/bransch_1.png" id="7_gl83y"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+[ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
 size = Vector2(27, 24)
@@ -40,11 +40,48 @@ shader_parameter/leaf = ExtResource("6_a1ps7")
 
 [node name="Main" type="Node2D"]
 
-[node name="TreeTrunk" type="Sprite2D" parent="."]
+[node name="TreeTrunk" type="Control" parent="."]
 z_index = -2
-position = Vector2(0, -1190)
+layout_mode = 3
+anchors_preset = 0
+offset_top = -1190.0
+offset_bottom = -1190.0
 scale = Vector2(4.70375, 18.5573)
-texture = ExtResource("2_yw5w0")
+
+[node name="TrunkBg" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(0.425193, 57.3898)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_xqglc")
+
+[node name="TrunkBg2" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(0.425, 37.452)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_xqglc")
+
+[node name="TrunkBg3" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(0.425193, 17.5672)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_xqglc")
+
+[node name="TrunkSide" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(-53.787, 57.39)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_cygdh")
+
+[node name="TrunkSide2" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(-53.787, 37.452)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_cygdh")
+
+[node name="TrunkSide3" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(70, 57.39)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_cygdh")
+
+[node name="TrunkSide4" type="Sprite2D" parent="TreeTrunk"]
+position = Vector2(70, 37.452)
+scale = Vector2(0.212596, 0.0538872)
+texture = ExtResource("1_cygdh")
 
 [node name="WASDSign" type="Sprite2D" parent="."]
 position = Vector2(-707, -29)
@@ -104,7 +141,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch5" type="StaticBody2D" parent="."]
-position = Vector2(387, -263)
+position = Vector2(457, -263)
 scale = Vector2(2.06527, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch5"]
@@ -114,7 +151,7 @@ one_way_collision = true
 [node name="Bransch1" type="Sprite2D" parent="Branch5"]
 position = Vector2(30.0203, 29)
 scale = Vector2(0.146, 0.3)
-texture = ExtResource("7_gl83y")
+texture = ExtResource("9_0sjd1")
 
 [node name="Branch2" type="StaticBody2D" parent="."]
 position = Vector2(-508, -176)
