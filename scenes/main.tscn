@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=23 format=3 uid="uid://o824tquqxdf"]
-
+[gd_scene load_steps=26 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
@@ -15,8 +13,8 @@
 [ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="6_a1ps7"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
-[ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
+[ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
 size = Vector2(27, 24)
@@ -276,10 +274,11 @@ script = ExtResource("7_hkprh")
 position = Vector2(249, -137)
 curve = SubResource("Curve2D_n88ln")
 
-[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent") instance=ExtResource("13_537f5")]
+[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox") instance=ExtResource("13_537f5")]
 Speed = 50.0
 Path = NodePath("..")
 NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 navigation_polygon = SubResource("NavigationPolygon_ude43")
