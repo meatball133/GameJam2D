@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
+
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
@@ -188,14 +189,16 @@ one_way_collision = true
 position = Vector2(457, -263)
 scale = Vector2(2.06527, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch5"]
-shape = SubResource("RectangleShape2D_m3jal")
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Branch5"]
+polygon = PackedVector2Array(-72.6297, -26, -31.9571, -12, -6.77878, -3, 45.0304, -3, 110.397, -22, 82.3137, 20, 23.2415, 18, -24.2099, 21, -74.0823, 9)
 one_way_collision = true
 
 [node name="Bransch1" type="Sprite2D" parent="Branch5"]
 position = Vector2(30.0203, 29)
 scale = Vector2(0.146, 0.3)
 texture = ExtResource("9_0sjd1")
+
+[node name="Leaf" parent="Branch5" instance=ExtResource("10_1hk61")]
 
 [node name="Branch2" type="StaticBody2D" parent="."]
 position = Vector2(-508, -176)
