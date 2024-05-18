@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://u7yfdo2qrh4x"]
+
+[ext_resource type="Texture2D" uid="uid://cjt03alrium5x" path="res://textures/rotten_branch_1.png" id="1_6ad2t"]
+[ext_resource type="Script" path="res://scripts/branch.gd" id="1_1873b"]
+[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="2_lihoi"]
+[ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="4_nu2yl"]
+[ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="5_4qxfy"]
+
+[node name="TutorialBranch" type="StaticBody2D"]
+position = Vector2(454, -131)
+script = ExtResource("1_1873b")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-16.149, 0)
+scale = Vector2(1.88939, 1)
+polygon = PackedVector2Array(-72.6297, -26, -31.9571, -12, -6.77878, -3, 45.0304, -3, 110.397, -22, 82.3137, 20, 23.2415, 18, -24.2099, 21, -74.0823, 9)
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 28)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_6ad2t")
+
+[node name="Leaf3" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(166, -6)
+rotation = -1.33364
+scale = Vector2(1.53805, 1.53805)
+
+[node name="Leaf4" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(197, -63)
+rotation = -0.3426
+scale = Vector2(1.53805, 1.53805)
+
+[node name="Leaf7" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(98, -32)
+rotation = -1.0315
+scale = Vector2(1.53805, 1.53805)
+
+[node name="ArrowSign" type="Sprite2D" parent="."]
+position = Vector2(56.9999, -21)
+scale = Vector2(0.0795668, 0.0742188)
+texture = ExtResource("4_nu2yl")
+
+[node name="BeatSign" type="Sprite2D" parent="."]
+position = Vector2(-2, -33)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("5_4qxfy")
