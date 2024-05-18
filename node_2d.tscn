@@ -30,6 +30,7 @@ unique_name_in_owner = true
 position = Vector2(-776, -27)
 floor_snap_length = 25.0
 script = ExtResource("1_5c3xm")
+jump_veloicty = 750.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_2u52f")
