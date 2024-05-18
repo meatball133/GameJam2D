@@ -13,6 +13,10 @@ var textures = [
 
 @onready var music = %Music
 @onready var material_leaf = $Sprite2D.material
+@onready var on_time = $ParticlesOnTime
+@onready var off_time = $ParticlesOffTime
+@onready var completed_time = $ParticlesComplete
+@onready var sound_effect_click = $AudioStreamPlayer2D
 
 var health = 0
 
@@ -23,13 +27,17 @@ func _input_event(viewport, event, shape_idx):
 func on_click():
 	if abs(music.distance_to_beat()) < time_range:
 		health += 1
-		#TODO! N¨ågon effekt som visar att du gjorde rätt, typ partiklar, ljud effekt osv.
+		# particles and sound effect
+		on_time.emitting = true
+		sound_effect_click.playing = true
 	else:
 		health = 0
-		#TODO! Lägg till något som tydligt visar att du missade takten
+		# fail particles
+		off_time.emitting = true
 
 	material_leaf.set_shader_parameter("leaf", textures[health])
 
 	if health >= health_goal:
-		#TODO! Gör någon ljud effekt och partiklar eller något
+		# completed particles
+		completed_time.emitting = true
 		pass

@@ -251,6 +251,9 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
+[node name="Leaf" parent="Branch4" instance=ExtResource("10_1hk61")]
+position = Vector2(502.215, -112)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
 zoom = Vector2(1.75, 1.75)
@@ -263,7 +266,7 @@ snap_speed = 0.125
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_67nx3")
-volume_db = -20.0
+volume_db = -18.0
 autoplay = true
 script = ExtResource("7_hkprh")
 
