@@ -12,7 +12,8 @@
 [ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
-[ext_resource type="PackedScene" uid="uid://b35b14uqsx4le" path="res://scenes/leaf.tscn" id="10_1hk61"]
+[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
+
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
@@ -238,6 +239,9 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
+[node name="Leaf" parent="Branch4" instance=ExtResource("10_1hk61")]
+position = Vector2(502.215, -112)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
 zoom = Vector2(1.75, 1.75)
@@ -250,7 +254,7 @@ snap_speed = 0.125
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_67nx3")
-volume_db = -20.0
+volume_db = -18.0
 autoplay = true
 script = ExtResource("7_hkprh")
 
