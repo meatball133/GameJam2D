@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
+
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
@@ -6,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="Texture2D" uid="uid://bshnj4stgfmac" path="res://textures/mibbo.png" id="4_ghnhg"]
+[ext_resource type="Shader" path="res://shaders/leaf.gdshader" id="5_fkdjn"]
 [ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
 [ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="6_a1ps7"]
@@ -27,6 +30,13 @@ colors = PackedColorArray(0.345098, 0.380392, 0.721569, 1, 0.345098, 0.380392, 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5dms"]
+shader = ExtResource("5_fkdjn")
+shader_parameter/sway_strength = 0.1
+shader_parameter/sway_speed = 3.5
+shader_parameter/sway_speed_diff = 0.1
+shader_parameter/leaf = ExtResource("6_a1ps7")
 
 [node name="Main" type="Node2D"]
 
@@ -81,8 +91,8 @@ region_enabled = true
 region_rect = Rect2(0, 176.985, 2000, 94)
 
 [node name="Branch" type="StaticBody2D" parent="."]
-position = Vector2(474, -162)
-rotation = -0.122173
+position = Vector2(486, -122)
+rotation = -0.0349066
 scale = Vector2(4.67514, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="Branch"]
@@ -145,6 +155,16 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
+[node name="Leaf" type="StaticBody2D" parent="."]
+position = Vector2(796, -147)
+
+[node name="Sprite2D" type="Sprite2D" parent="Leaf"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c5dms")
+rotation = 0.518363
+scale = Vector2(0.2, 0.163)
+texture = ExtResource("2_yw5w0")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
 zoom = Vector2(1.75, 1.75)
@@ -157,10 +177,6 @@ snap_speed = 0.125
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("6_67nx3")
-volume_db = -18.0
+volume_db = 1.083
 autoplay = true
 script = ExtResource("7_hkprh")
-beats = null
-time_before_start = null
-measures = null
-bpm = null
