@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
-
+[gd_scene load_steps=22 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
@@ -14,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="6_a1ps7"]
 [ext_resource type="Texture2D" uid="uid://drmbfcv0456qa" path="res://textures/bransch_1.png" id="7_gl83y"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+[ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
 size = Vector2(27, 24)
@@ -37,6 +36,17 @@ shader_parameter/sway_strength = 0.1
 shader_parameter/sway_speed = 3.5
 shader_parameter/sway_speed_diff = 0.1
 shader_parameter/leaf = ExtResource("6_a1ps7")
+
+[sub_resource type="Curve2D" id="Curve2D_n88ln"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 19, -2, 0, 0, 0, 0, 450, -14, 0, 0, 0, 0, 528, -15, 0, 0, 0, 0, 19, -2)
+}
+point_count = 4
+
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_ude43"]
+vertices = PackedVector2Array(804.539, -145.719, 195.078, -127.344, 198.102, -157.539, 807.367, -195.32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(184, -117, 814, -136, 818, -206, 189, -167)])
 
 [node name="Main" type="Node2D"]
 
@@ -180,3 +190,15 @@ stream = ExtResource("6_67nx3")
 volume_db = 1.083
 autoplay = true
 script = ExtResource("7_hkprh")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(249, -137)
+curve = SubResource("Curve2D_n88ln")
+
+[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+NavigationAgent = NodePath("NavigationAgent2D")
+
+[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
+navigation_polygon = SubResource("NavigationPolygon_ude43")
