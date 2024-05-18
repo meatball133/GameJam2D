@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://drmbfcv0456qa"
-path="res://.godot/imported/bransch_1.png-bc2615d4fed858c2325f3ae34bf1d710.ctex"
+uid="uid://3onjcfjyrgx"
+path="res://.godot/imported/branch_1.png-2cc0b5b78247232ad004433b9bac432e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/bransch_1.png"
-dest_files=["res://.godot/imported/bransch_1.png-bc2615d4fed858c2325f3ae34bf1d710.ctex"]
+source_file="res://textures/branch_1.png"
+dest_files=["res://.godot/imported/branch_1.png-2cc0b5b78247232ad004433b9bac432e.ctex"]
 
 [params]
 
