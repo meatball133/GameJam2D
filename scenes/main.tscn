@@ -74,13 +74,13 @@ scale = Vector2(0.212596, 0.0538872)
 texture = ExtResource("1_cygdh")
 
 [node name="TrunkSide3" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(70, 57.9827)
-scale = Vector2(0.212596, 0.0506836)
+position = Vector2(70, 57.39)
+scale = Vector2(0.212596, 0.0538872)
 texture = ExtResource("1_cygdh")
 
 [node name="TrunkSide4" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(70, 34.9191)
-scale = Vector2(0.212596, 0.0401957)
+position = Vector2(70, 37.452)
+scale = Vector2(0.212596, 0.0538872)
 texture = ExtResource("1_cygdh")
 
 [node name="WASDSign" type="Sprite2D" parent="."]
