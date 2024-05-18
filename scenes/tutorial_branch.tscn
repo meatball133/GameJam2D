@@ -1,10 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://u7yfdo2qrh4x"]
+[gd_scene load_steps=10 format=3 uid="uid://u7yfdo2qrh4x"]
 
 [ext_resource type="Texture2D" uid="uid://cjt03alrium5x" path="res://textures/rotten_branch_1.png" id="1_6ad2t"]
 [ext_resource type="Script" path="res://scripts/branch.gd" id="1_1873b"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="2_lihoi"]
 [ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="4_nu2yl"]
 [ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="5_4qxfy"]
+[ext_resource type="AudioStream" uid="uid://duldk7h5xfja4" path="res://music/tree_complete.mp3" id="6_2b6gs"]
+[ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="7_4qcw7"]
+
+[sub_resource type="Curve" id="Curve_g5akk"]
+_data = [Vector2(0.011236, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nrf44"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="TutorialBranch" type="StaticBody2D"]
 position = Vector2(454, -131)
@@ -45,3 +54,37 @@ texture = ExtResource("4_nu2yl")
 position = Vector2(-2, -33)
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("5_4qxfy")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2b6gs")
+volume_db = 8.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(129, 0)
+emitting = false
+amount = 250
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("7_4qcw7")
+emission_shape = 1
+emission_sphere_radius = 40.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 216.5
+initial_velocity_max = 340.22
+angular_velocity_min = 100.0
+angular_velocity_max = 1000.0
+damping_min = 1.0
+damping_max = 2.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_g5akk")
+color = Color(1, 1, 1, 0.647059)
+color_ramp = SubResource("Gradient_nrf44")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

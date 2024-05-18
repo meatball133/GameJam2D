@@ -40,4 +40,5 @@ func on_click():
 	if health >= health_goal:
 		# completed particles
 		completed_time.emitting = true
+		#$CompletionSound.play()
 		get_parent().leaf_momento()

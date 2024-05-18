@@ -42,7 +42,7 @@ shape = SubResource("CircleShape2D_iib4u")
 [node name="ParticlesOnTime" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 16
-lifetime = 0.5
+lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
