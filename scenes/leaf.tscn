@@ -1,0 +1,31 @@
+[gd_scene load_steps=7 format=3 uid="uid://b35b14uqsx4le"]
+
+[ext_resource type="Script" path="res://scripts/leaf.gd" id="1_bk8x1"]
+[ext_resource type="Shader" path="res://shaders/leaf.gdshader" id="2_6c3el"]
+[ext_resource type="Texture2D" uid="uid://crpveitm0hld4" path="res://textures/Leaf-hp0-gamejam.svg" id="3_bvvne"]
+[ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="4_pyagt"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c5dms"]
+shader = ExtResource("2_6c3el")
+shader_parameter/sway_strength = 0.1
+shader_parameter/sway_speed = 3.5
+shader_parameter/sway_speed_diff = 0.1
+shader_parameter/leaf = ExtResource("3_bvvne")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_iib4u"]
+radius = 17.0
+
+[node name="Leaf" type="Area2D"]
+position = Vector2(77.9559, -47)
+scale = Vector2(0.484198, 1)
+script = ExtResource("1_bk8x1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_c5dms")
+rotation = 0.518363
+scale = Vector2(0.2, 0.163)
+texture = ExtResource("4_pyagt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_iib4u")
