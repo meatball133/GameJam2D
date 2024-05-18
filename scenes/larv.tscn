@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://byiqxddjnlwof"]
+
+[ext_resource type="Script" path="res://scripts/Larv.cs" id="1_imhsa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_derjr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ffau3"]
+
+[node name="Larv" type="CharacterBody2D" node_paths=PackedStringArray("NavigationAgent", "HurtBox")]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_imhsa")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_derjr")
+
+[node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+debug_enabled = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_ffau3")
