@@ -2,7 +2,7 @@ extends AudioStreamPlayer
 
 @export var beats = 4
 @export var time_offset = 0.0
-@export var measures = 30
+@export var measures = 32
 @export var seconds_per_beat = 60.0 / 120.0
 
 var song_position := 0.0
