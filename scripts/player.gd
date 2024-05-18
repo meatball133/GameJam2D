@@ -7,10 +7,8 @@ extends CharacterBody2D
 @export var dash = 50.0
 
 var time_since_floor := 0.0
-var trail : Line2D
-
-func _ready() -> void:
-	trail = $Trail
+@onready var trail : Line2D = $Trail
+@onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -28,6 +26,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time:
 		velocity.y = - jump_veloicty
+		
+	# Handle slap
+	if Input.is_action_just_pressed("slap"):
+		sprite.play("slap")
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -36,11 +38,16 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * speed
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
-		
+	
+	#Just walked left
+	if velocity.x < 0:
+		sprite.position.x = -100
+		sprite.flip_h = true
+	elif velocity.x > 0:
+		sprite.position.x = 0
+		sprite.flip_h = false
 
 	move_and_slide()
 	
-	if velocity.x > 0.1 or velocity.x < -0.1:
-		$AnimationPlayer.play("walk")
-	else:
-		$AnimationPlayer.stop()
+	if not sprite.is_playing():
+		sprite.play("idle")
