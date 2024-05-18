@@ -9,11 +9,10 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="Texture2D" uid="uid://bshnj4stgfmac" path="res://textures/mibbo.png" id="4_ghnhg"]
 [ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
-[ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
-
+[ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
@@ -253,7 +252,7 @@ snap_speed = 0.125
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("6_67nx3")
+stream = ExtResource("12_mcti0")
 volume_db = -18.0
 autoplay = true
 script = ExtResource("7_hkprh")
