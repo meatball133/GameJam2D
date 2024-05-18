@@ -18,7 +18,7 @@ func _process(delta: float) -> void:
 		target.x = - snap_x
 	else:
 		target.x = snap_x
-	print(player.global_position.y - global_position.y)
+	
 	if player.global_position.y - global_position.y < - y_limit:
 		target.y = player.global_position.y
 	if player.global_position.y - global_position.y > y_limit:
