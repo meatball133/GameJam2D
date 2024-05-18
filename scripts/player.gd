@@ -7,11 +7,18 @@ extends CharacterBody2D
 @export var dash = 50.0
 
 var time_since_floor := 0.0
+var trail : Line2D
+
+func _ready() -> void:
+	trail = $Trail
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+		trail.MAX_LENGHT = 0
+	else:
+		trail.MAX_LENGHT = 30
 	
 	# Coyote time
 	time_since_floor += delta

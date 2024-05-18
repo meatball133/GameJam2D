@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=15 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
@@ -6,11 +6,22 @@
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="Shader" path="res://shaders/leaf.gdshader" id="5_fkdjn"]
+[ext_resource type="Texture2D" uid="uid://bshnj4stgfmac" path="res://textures/mibbo.png" id="4_ghnhg"]
+[ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
 [ext_resource type="AudioStream" uid="uid://dp1q6se66sl0f" path="res://music/mibbo-theme.mp3" id="6_67nx3"]
 [ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="6_a1ps7"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
+size = Vector2(27, 24)
+
+[sub_resource type="Curve" id="Curve_hoofo"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.345, 0.125), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="Gradient" id="Gradient_crsqh"]
+offsets = PackedFloat32Array(0, 0.375, 1)
+colors = PackedColorArray(0.345098, 0.380392, 0.721569, 1, 0.345098, 0.380392, 0.721569, 1, 0.482353, 0.54902, 0.917647, 1)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
 
@@ -27,6 +38,7 @@ shader_parameter/leaf = ExtResource("6_a1ps7")
 [node name="Main" type="Node2D"]
 
 [node name="TreeTrunk" type="Sprite2D" parent="."]
+z_index = -2
 position = Vector2(0, -1190)
 scale = Vector2(4.70375, 18.5573)
 texture = ExtResource("2_yw5w0")
@@ -44,11 +56,20 @@ script = ExtResource("1_5c3xm")
 jump_veloicty = 750.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_2u52f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-scale = Vector2(0.140625, 0.15625)
-texture = ExtResource("2_yw5w0")
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ghnhg")
+
+[node name="Trail" type="Line2D" parent="Player"]
+z_index = -1
+position = Vector2(0, 15)
+width = 100.0
+width_curve = SubResource("Curve_hoofo")
+gradient = SubResource("Gradient_crsqh")
+script = ExtResource("5_txe5k")
 
 [node name="Dirt" type="StaticBody2D" parent="."]
 texture_repeat = 2
