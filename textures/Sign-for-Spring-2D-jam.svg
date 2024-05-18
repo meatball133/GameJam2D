@@ -1,0 +1,14 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512">
+	<title>Sign-for-Spring-2D-jam</title>
+	<style>
+		.s0 { fill: #d5a45d;stroke: #392c19;stroke-linecap: round;stroke-linejoin: round;stroke-width: 8 } 
+		.s1 { fill: #a76f32 } 
+		.s2 { fill: #c08648 } 
+	</style>
+	<path id="Pole" class="s0" d="m116.8 253l2.6-127.5 25.5-1.4-2.6 126.2"/>
+	<path id="Lager 2" class="s1" d="m141.8 135.5l-2.9 115.8-15.9 0.4 2.2-1.7 10-2.8c0 0 2.9-106.7 2.8-106.7-0.1 0-15.4-2.8-15-2.8z"/>
+	<path id="Sign" class="s0" d="m3 40.6l245.3-38.6 1.7 46.5-28.3 13.2 29-3.2-3.1 69.6-234.2 10.8-2.2-21.9 21.8-10.8h-22.3z"/>
+	<path id="Form 2" class="s2" d="m45.8 83.2l171.3-23.8 4.1 5.3-174 22zm171.4-23.8l4.1 5.3z"/>
+	<path id="Form 1" class="s1" d="m244.7 126.8l-228.2 9.2v-4l225.3-9.8 0.7-21.5 3.5-26.7z"/>
+	<path id="Form 4" class="s2" d="m36.9 104l125.1-11.4-3.3 3.7-123.2 13.1"/>
+</svg>
