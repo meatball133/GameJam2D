@@ -1,18 +1,19 @@
 extends AudioStreamPlayer
 
 @export var beats = 4
-@export var time_before_start = 0.0
+@export var time_offset = 0.0
 @export var measures = 30
-@export var bpm = 120
-
-var seconds_per_beat = 60 / bpm
+@export var seconds_per_beat = 60.0 / 120.0
 
 var song_position := 0.0
+var song_position_in_beats = 0.0
 
 func _process(delta: float) -> void:
-	var song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
-	song_position -= AudioServer.
+	song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
+	song_position -= AudioServer.get_output_latency() + time_offset
+	
+	print(distance_to_beat())
 
 func distance_to_beat():
-	var song_position = get_playback_position() + AudioServer.get_time_since_last_mix()
-	song_position _= AudioServer
+	var in_beats : float = round(song_position / seconds_per_beat)
+	return song_position - in_beats * seconds_per_beat

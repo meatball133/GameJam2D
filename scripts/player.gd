@@ -28,6 +28,9 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time:
 		velocity.y = - jump_veloicty
+	
+	if abs(%Music.distance_to_beat()) < 0.01 and is_on_floor():
+		%Glass.play(0.0)
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
