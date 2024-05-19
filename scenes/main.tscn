@@ -1,129 +1,26 @@
-[gd_scene load_steps=23 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=20 format=3 uid="uid://o824tquqxdf"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_5c3xm"]
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
 [ext_resource type="Texture2D" uid="uid://b2fra0u4apoq0" path="res://textures/Placeholder-Dirt-Ground-Gamejam.svg" id="3_17gvx"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
-[ext_resource type="Script" path="res://scripts/trail.gd" id="5_txe5k"]
-[ext_resource type="Texture2D" uid="uid://6va2lcx8wvns" path="res://textures/slime_spritesheet.png" id="6_isc4t"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+[ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
+[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
+[ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="11_2ow0m"]
+[ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
+[ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
+[ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://u7yfdo2qrh4x" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
-size = Vector2(30, 24)
-
-[sub_resource type="Curve" id="Curve_hoofo"]
-_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.345, 0.125), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="Gradient" id="Gradient_crsqh"]
-offsets = PackedFloat32Array(0, 0.375, 1)
-colors = PackedColorArray(0.231373, 0.576471, 0.776471, 1, 0.215686, 0.556863, 0.764706, 1, 0.496308, 0.760208, 0.933047, 1)
-
-[sub_resource type="Animation" id="Animation_r1phm"]
-resource_name = "walk"
-length = 0.8
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.1, 0.1), Vector2(0.11, 0.09)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(3, 3)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_aitah"]
-_data = {
-"walk": SubResource("Animation_r1phm")
-}
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wmtk5"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(0, 0, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h0wjx"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(0, 512, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_c3yvr"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(1536, 0, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7a0fd"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(1536, 512, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n01wh"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(1536, 1024, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_57a6x"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(1536, 1536, 1536, 512)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8mgh6"]
-atlas = ExtResource("6_isc4t")
-region = Rect2(1536, 2048, 1536, 512)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_j0hf6"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wmtk5")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h0wjx")
-}],
-"loop": true,
-"name": &"idle",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c3yvr")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_7a0fd")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_n01wh")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_57a6x")
-}, {
-"duration": 2.0,
-"texture": SubResource("AtlasTexture_8mgh6")
-}],
-"loop": false,
-"name": &"slap",
-"speed": 15.0
-}]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
 
 [sub_resource type="Curve2D" id="Curve2D_n88ln"]
 _data = {
@@ -186,16 +83,17 @@ position = Vector2(-707, -29)
 scale = Vector2(0.268752, 0.268752)
 texture = ExtResource("3_82046")
 
-[node name="Player" type="CharacterBody2D" parent="."]
+[node name="Player" parent="." instance=ExtResource("4_bvi2o")]
 unique_name_in_owner = true
 position = Vector2(-776, -27)
-floor_snap_length = 25.0
-script = ExtResource("1_5c3xm")
-jump_veloicty = 750.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2(-50, 2)
-shape = SubResource("RectangleShape2D_2u52f")
+[node name="Branch6" type="StaticBody2D" parent="."]
+position = Vector2(161, -235)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch6"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
 scale = Vector2(0.1, 0.1)
@@ -215,10 +113,9 @@ libraries = {
 "": SubResource("AnimationLibrary_aitah")
 }
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
-scale = Vector2(0.1, 0.1)
-sprite_frames = SubResource("SpriteFrames_j0hf6")
-animation = &"slap"
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
 
 [node name="Dirt" type="StaticBody2D" parent="."]
 texture_repeat = 2
@@ -247,6 +144,40 @@ texture = ExtResource("2_yw5w0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch"]
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
+
+[node name="SlapSign" type="Sprite2D" parent="Branch"]
+z_index = -1
+position = Vector2(-59.0343, -33.6526)
+rotation = 0.161832
+scale = Vector2(0.0426263, 0.196686)
+skew = -0.154363
+texture = ExtResource("11_78hvb")
+
+[node name="Branch5" type="StaticBody2D" parent="."]
+position = Vector2(454, -131)
+scale = Vector2(2.06527, 1)
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Branch5"]
+polygon = PackedVector2Array(-72.6297, -26, -31.9571, -12, -6.77878, -3, 45.0304, -3, 110.397, -22, 82.3137, 20, 23.2415, 18, -24.2099, 21, -74.0823, 9)
+one_way_collision = true
+
+[node name="Bransch1" type="Sprite2D" parent="Branch5"]
+position = Vector2(30.0203, 29)
+scale = Vector2(0.146, 0.3)
+texture = ExtResource("9_0sjd1")
+
+[node name="Leaf" parent="Branch5" instance=ExtResource("10_1hk61")]
+position = Vector2(45.0304, -39)
+
+[node name="ArrowSign" type="Sprite2D" parent="Branch5"]
+position = Vector2(26.6309, -22)
+scale = Vector2(0.0385009, 0.0795148)
+texture = ExtResource("11_2ow0m")
+
+[node name="BeatSign" type="Sprite2D" parent="Branch5"]
+position = Vector2(-9.19978, -37)
+scale = Vector2(0.0650984, 0.134446)
+texture = ExtResource("12_bplls")
 
 [node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
 
@@ -319,3 +250,5 @@ AnimationPlayer = NodePath("AnimationPlayer")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(102, -157)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

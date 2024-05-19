@@ -1,11 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://u7yfdo2qrh4x"]
+[gd_scene load_steps=10 format=3 uid="uid://b3blgpot80vsh"]
 
 [ext_resource type="Texture2D" uid="uid://cjt03alrium5x" path="res://textures/rotten_branch_1.png" id="1_6ad2t"]
 [ext_resource type="Script" path="res://scripts/branch.gd" id="1_1873b"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="2_lihoi"]
 [ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="4_nu2yl"]
-[ext_resource type="Texture2D" uid="uid://cv43f3jbug5mf" path="res://textures/slap-sign-gamejam(1)-svg.png" id="5_xsrn7"]
-[ext_resource type="AudioStream" uid="uid://duldk7h5xfja4" path="res://music/tree_complete.mp3" id="6_2b6gs"]
+[ext_resource type="Texture2D" path="res://textures/slap-sign-gamejam(1)-svg.png" id="5_xsrn7"]
+[ext_resource type="AudioStream" path="res://music/tree_complete.mp3" id="6_2b6gs"]
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="7_4qcw7"]
 
 [sub_resource type="Curve" id="Curve_g5akk"]

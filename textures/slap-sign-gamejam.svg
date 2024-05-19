@@ -1,0 +1,31 @@
+<svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="512" height="512">
+	<title>slap-sign-gamejam</title>
+	<defs>
+		<image  width="204" height="37" id="img1" href="data:image/png;base64,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"/>
+	</defs>
+	<style>
+		tspan { white-space:pre } 
+		.s0 { fill: #d5a45d;stroke: #392c19;stroke-linecap: round;stroke-linejoin: round;stroke-width: 8 } 
+		.s1 { fill: #a76f32 } 
+		.s2 { fill: #c08648 } 
+		.t3 { font-size: 40px;fill: #ffffff;font-weight: 400;font-family: "DynaPuff-Regular", "DynaPuff" } 
+		.s4 { fill: none;stroke: #4e3319;stroke-miterlimit:100;stroke-width: 4 } 
+		.s5 { fill: #5f401f;stroke: #5f401f;stroke-miterlimit:100;stroke-width: 4 } 
+	</style>
+	<path id="Pole" class="s0" d="m116.8 253l2.6-127.5 25.5-1.4-2.6 126.2"/>
+	<path id="Lager 2" class="s1" d="m141.8 135.5l-2.9 115.8-15.9 0.4 2.2-1.7 10-2.8c0 0 2.9-106.7 2.8-106.7-0.1 0-15.4-2.8-15-2.8z"/>
+	<path id="Sign" class="s0" d="m3 40.6l245.3-38.6 1.7 46.5-28.3 13.2 29-3.2-3.1 69.6-234.2 10.8-2.2-21.9 21.8-10.8h-22.3z"/>
+	<path id="Form 2" class="s2" d="m45.8 83.2l171.3-23.8 4.1 5.3-174 22zm171.4-23.8l4.1 5.3z"/>
+	<path id="Form 1" class="s1" d="m244.7 126.8l-228.2 9.2v-4l225.3-9.8 0.7-21.5 3.5-26.7z"/>
+	<use id="Form 4" href="#img1" x="35" y="84"/>
+	<text id="SLAP!" style="transform: matrix(.986,-0.168,-0.004,1.011,168.915,57.832);paint-order:stroke fill markers;stroke: #956b41;stroke-width: 6;stroke-linejoin: round;" >
+		<tspan x="-51.9" y="0" class="t3">S</tspan><tspan  y="0" class="t3">L</tspan><tspan  y="0" class="t3">A</tspan><tspan  y="0" class="t3">P</tspan><tspan  y="0" class="t3">!
+</tspan>
+	</text>
+	<g id="Mapp 1">
+		<path id="Form 8" class="s4" d="m66.2 61.1c-6.8 0.7-18.5 5.9-18.1 12.2 0.3 6 1.3 22.7 3.4 30.5 2.1 7.8 9.7 16.5 20.6 15 10.9-1.5 14.5-9.5 16.4-16.8 2-7.2-3.2-31.8-3.2-31.8-4-8.6-10.6-10-19.1-9.1z"/>
+		<path id="Lager 5" class="s4" d="m64.5 44.2c-11.4 9.8-3.6 10.1 0.4 13.3 4 3.2 1.8 7.6 1.8 7.6l2.5 24.8c0 0 15.3-4.2 18.2-8.9 1.8 0.2-12.6 8.3-22.2 9.3-0.3 0.1-11.5-3.1-14.4-3.5"/>
+		<path id="Lager 4" class="s5" d="m72 67.1l1.5 14.9c5.7-1.2 8.8-4.2 8.8-4.2-0.5-7-6.3-11.7-10.3-10.7z"/>
+		<path id="Form 9" class="s5" d="m109-22"/>
+	</g>
+</svg>
