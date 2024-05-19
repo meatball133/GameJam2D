@@ -12,9 +12,12 @@ extends Camera2D
 
 var target := global_position
 var max_y := global_position.y
+var is_end = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if is_end:
+		pass
 	if abs(player.global_position.x) < x_switch:
 		target.x = 0.0
 	elif player.global_position.x < 0:
@@ -27,7 +30,20 @@ func _process(delta: float) -> void:
 	if player.global_position.y - global_position.y > y_limit_low:
 		target.y += y_diff
 	
+	if Input.is_key_pressed(KEY_0):
+		end()
+	
 	# no
 	target.y = clamp(target.y, -1000000, max_y)
 	
 	global_position = lerp(global_position, target, snap_speed)
+
+func end():
+	is_end = true
+	%Music.stop()
+	$AudioStreamPlayer.play()
+	$AnimationPlayer.play("end")
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	get_tree().quit()
