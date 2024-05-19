@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=17 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
@@ -9,8 +9,6 @@
 [ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
-[ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
-[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
@@ -132,22 +130,6 @@ rotation = 0.161832
 scale = Vector2(0.0426263, 0.196686)
 skew = -0.154363
 texture = ExtResource("11_78hvb")
-
-[node name="Branch5" type="StaticBody2D" parent="."]
-position = Vector2(454, -131)
-scale = Vector2(2.06527, 1)
-
-[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Branch5"]
-polygon = PackedVector2Array(-72.6297, -26, -31.9571, -12, -6.77878, -3, 45.0304, -3, 110.397, -22, 82.3137, 20, 23.2415, 18, -24.2099, 21, -74.0823, 9)
-one_way_collision = true
-
-[node name="Bransch1" type="Sprite2D" parent="Branch5"]
-position = Vector2(30.0203, 29)
-scale = Vector2(0.146, 0.3)
-texture = ExtResource("9_0sjd1")
-
-[node name="Leaf" parent="Branch5" instance=ExtResource("10_1hk61")]
-position = Vector2(45.0304, -39)
 
 [node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
 
