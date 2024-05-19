@@ -5,13 +5,13 @@
 [ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_bvi2o"]
+[ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://cp7dptx55ik0h" path="res://textures/ground.png" id="7_n8bxu"]
-[ext_resource type="PackedScene" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
+[ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
-[ext_resource type="PackedScene" uid="uid://c0e7vcjou04x6" path="res://scenes/ui.tscn" id="13_8levl"]
+[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="13_8levl"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
@@ -485,11 +485,11 @@ position = Vector2(-10, 1)
 shape = SubResource("WorldBoundaryShape2D_wye2e")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Dirt"]
-position = Vector2(23, 5)
+position = Vector2(24, 9)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("7_n8bxu")
 region_enabled = true
-region_rect = Rect2(0, 0, 4096, 256)
+region_rect = Rect2(0, 20.8522, 4096, 235.148)
 
 [node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
 position = Vector2(476, -130)
