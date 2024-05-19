@@ -29,7 +29,7 @@ func _physics_process(delta: float) -> void:
 		time_since_floor = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time:
+	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time and velocity.y >= 0:
 		velocity.y = - jump_veloicty
 		
 	# Handle slap
