@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
@@ -6,13 +6,14 @@
 [ext_resource type="Texture2D" uid="uid://b2fra0u4apoq0" path="res://textures/Placeholder-Dirt-Ground-Gamejam.svg" id="3_17gvx"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
-[ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
+[ext_resource type="PackedScene" uid="uid://bb8ew47r4w50f" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
-[ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
+[ext_resource type="PackedScene" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://c0e7vcjou04x6" path="res://scenes/ui.tscn" id="13_8levl"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
+[ext_resource type="PackedScene" uid="uid://c5rpuc68rf0sr" path="res://scenes/Apple.tscn" id="14_nmpls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
@@ -529,3 +530,8 @@ position = Vector2(111, -262)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StaticBody2D" parent="." instance=ExtResource("14_nmpls")]
+position = Vector2(-365, -294)
+
+[connection signal="HealthDepleted" from="StaticBody2D" to="Player" method="_on_static_body_2d_health_depleted"]
