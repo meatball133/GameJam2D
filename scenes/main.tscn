@@ -6,12 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://b2fra0u4apoq0" path="res://textures/Placeholder-Dirt-Ground-Gamejam.svg" id="3_17gvx"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
-[ext_resource type="PackedScene" uid="uid://ck805qe0dbvpv" path="res://scenes/player.tscn" id="4_bvi2o"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
 [ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="11_2ow0m"]
-[ext_resource type="Texture2D" uid="uid://cvg8aohprpktd" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
+[ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
@@ -128,9 +128,9 @@ one_way_collision = true
 
 [node name="SlapSign" type="Sprite2D" parent="Branch"]
 z_index = -1
-position = Vector2(-59.417, -39.7187)
+position = Vector2(-59.0343, -33.6526)
 rotation = 0.161832
-scale = Vector2(0.0256855, 0.118518)
+scale = Vector2(0.0426263, 0.196686)
 skew = -0.154363
 texture = ExtResource("11_78hvb")
 
