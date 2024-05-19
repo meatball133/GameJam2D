@@ -19,6 +19,7 @@ public partial class Ui : Control
         GD.Print("Start Button Pressed");
         GetTree().Paused = false;
         startPanel.Visible = false;
+        GetParent().QueueFree();
     }
 
 }
