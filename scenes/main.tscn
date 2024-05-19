@@ -14,7 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
 [ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="11_2ow0m"]
 [ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
-[ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
+[ext_resource type="AudioStream" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]

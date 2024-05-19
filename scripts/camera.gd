@@ -5,6 +5,8 @@ extends Camera2D
 @export var snap_x = 500.0
 @export var x_switch = 750
 @export var y_limit = 200
+@export var y_limit_low = 190
+@export var y_diff = 300
 @export_range(0.0, 1.0) var snap_speed := 1.0
 @export var dash = 100.0
 
@@ -21,9 +23,9 @@ func _process(delta: float) -> void:
 		target.x = snap_x
 	
 	if player.global_position.y - global_position.y < - y_limit:
-		target.y = player.global_position.y
-	if player.global_position.y - global_position.y > y_limit:
-		target.y = player.global_position.y
+		target.y -= y_diff
+	if player.global_position.y - global_position.y > y_limit_low:
+		target.y += y_diff
 	
 	# no
 	target.y = clamp(target.y, -1000000, max_y)
