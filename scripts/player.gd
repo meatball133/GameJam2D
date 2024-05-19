@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		time_since_floor = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time:
-		random.randomize()
+	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time and velocity.y >= 0:
+    random.randomize()
 		$JumpAudio.set_pitch_scale(random.randfn(1.0, 0.2))
 		$JumpAudio.play()
 		velocity.y = - jump_veloicty
