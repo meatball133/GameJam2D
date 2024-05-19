@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
-[ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="13_8levl"]
+[ext_resource type="PackedScene" uid="uid://c0e7vcjou04x6" path="res://scenes/ui.tscn" id="13_8levl"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
@@ -94,6 +94,380 @@ position = Vector2(70, 37.452)
 scale = Vector2(0.212596, 0.0538872)
 texture = ExtResource("1_cygdh")
 
+[node name="Branches" type="Node" parent="TreeTrunk"]
+
+[node name="Branch6" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(314, -254)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch6"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch6"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(601, -378)
+rotation = -0.0349066
+scale = Vector2(4.67514, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="SlapSign" type="Sprite2D" parent="TreeTrunk/Branches/Branch"]
+z_index = -1
+position = Vector2(-59.0343, -33.6526)
+rotation = 0.161832
+scale = Vector2(0.0426263, 0.196686)
+skew = -0.154363
+texture = ExtResource("11_78hvb")
+
+[node name="Branch2" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-467, -155)
+scale = Vector2(4.69154, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch2"]
+position = Vector2(-17.4783, -113.5)
+scale = Vector2(1, 0.148438)
+texture = ExtResource("2_yw5w0")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch2"]
+position = Vector2(-17.052, -114)
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch3" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(204, -67)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch3"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch3"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch5" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-673, -371)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch5"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch5"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch7" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-427, -451)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch7"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch7"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch8" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-681, -516)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch8"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch8"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch19" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-480, -592)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch19"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch19"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch17" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-265, -619)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch17"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch17"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch9" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(135, -614)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch9"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch9"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch10" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(267, -708)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch10"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch10"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch12" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(886, -732)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch12"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch12"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch13" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(654, -849)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch13"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch13"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch18" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(339, -904)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch18"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch18"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch14" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(5, -901)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch14"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch14"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch15" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-284, -930)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch15"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch15"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch20" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-738, -907)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch20"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch20"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch21" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-641, -1034)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch21"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch21"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch22" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-327, -1117)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch22"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch22"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch23" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-60, -1175)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch23"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch23"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch24" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-60, -1328)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch24"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch24"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch25" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(254, -1244)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch25"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch25"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch26" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-325, -1370)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch26"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch26"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch28" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-618, -1644)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch28"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch28"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch29" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-869, -1532)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch29"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch29"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch27" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-744, -1417)
+scale = Vector2(3.43816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch27"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch27"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch30" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-8, -1721)
+scale = Vector2(6.51911, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch30"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch30"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch16" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(-662, -801)
+scale = Vector2(1.45111, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch16"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch16"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch11" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(474, -658)
+scale = Vector2(2.41504, 2.43945)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch11"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch11"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
+[node name="Branch4" type="StaticBody2D" parent="TreeTrunk/Branches"]
+position = Vector2(12, -302)
+scale = Vector2(1.99816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch4"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch4"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
 [node name="WASDSign" type="Sprite2D" parent="."]
 position = Vector2(-707, -29)
 scale = Vector2(0.268752, 0.268752)
@@ -102,18 +476,6 @@ texture = ExtResource("3_82046")
 [node name="Player" parent="." instance=ExtResource("4_bvi2o")]
 unique_name_in_owner = true
 position = Vector2(-776, -27)
-
-[node name="Branch6" type="StaticBody2D" parent="."]
-position = Vector2(161, -235)
-scale = Vector2(1.31816, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Branch6"]
-scale = Vector2(1, 0.15625)
-texture = ExtResource("2_yw5w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6"]
-shape = SubResource("RectangleShape2D_m3jal")
-one_way_collision = true
 
 [node name="Dirt" type="StaticBody2D" parent="."]
 texture_repeat = 2
@@ -130,67 +492,8 @@ texture = ExtResource("3_17gvx")
 region_enabled = true
 region_rect = Rect2(0, 176.985, 2000, 94)
 
-[node name="Branch" type="StaticBody2D" parent="."]
-position = Vector2(588, -279)
-rotation = -0.0349066
-scale = Vector2(4.67514, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Branch"]
-scale = Vector2(1, 0.15625)
-texture = ExtResource("2_yw5w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch"]
-shape = SubResource("RectangleShape2D_m3jal")
-one_way_collision = true
-
-[node name="SlapSign" type="Sprite2D" parent="Branch"]
-z_index = -1
-position = Vector2(-59.0343, -33.6526)
-rotation = 0.161832
-scale = Vector2(0.0426263, 0.196686)
-skew = -0.154363
-texture = ExtResource("11_78hvb")
-
 [node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
-
-[node name="Branch2" type="StaticBody2D" parent="."]
-position = Vector2(-508, -176)
-scale = Vector2(4.69154, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Branch2"]
-position = Vector2(-17.4783, -113.5)
-scale = Vector2(1, 0.148438)
-texture = ExtResource("2_yw5w0")
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch2"]
-position = Vector2(-17.052, -114)
-shape = SubResource("RectangleShape2D_m3jal")
-one_way_collision = true
-
-[node name="Branch3" type="StaticBody2D" parent="."]
-position = Vector2(7, -60)
-scale = Vector2(1.31816, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Branch3"]
-scale = Vector2(1, 0.15625)
-texture = ExtResource("2_yw5w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch3"]
-shape = SubResource("RectangleShape2D_m3jal")
-one_way_collision = true
-
-[node name="Branch4" type="StaticBody2D" parent="."]
-position = Vector2(-37, -201)
-scale = Vector2(1.31816, 1)
-
-[node name="Sprite2D" type="Sprite2D" parent="Branch4"]
-scale = Vector2(1, 0.15625)
-texture = ExtResource("2_yw5w0")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch4"]
-shape = SubResource("RectangleShape2D_m3jal")
-one_way_collision = true
+position = Vector2(476, -130)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
@@ -210,7 +513,7 @@ parameters/looping = true
 script = ExtResource("7_hkprh")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(351, -294)
+position = Vector2(364, -393)
 curve = SubResource("Curve2D_n88ln")
 
 [node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
@@ -222,7 +525,7 @@ HurtBox = NodePath("Area2D")
 AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-position = Vector2(102, -157)
+position = Vector2(111, -262)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
