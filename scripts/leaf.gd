@@ -21,7 +21,7 @@ var textures = [
 var health = 0
 
 func _process(delta: float):
-	if abs(get_parent().music.distance_to_beat()) < time_range and int(get_parent().music.distance_in_beats()) % 4 < 2:
+	if abs(get_parent().music.distance_to_beat()) < time_range / 3 and int(get_parent().music.distance_in_beats()) % 4 < 2:
 		$AnimationPlayer.play("bounce")
 
 func _input_event(viewport, event, shape_idx):
