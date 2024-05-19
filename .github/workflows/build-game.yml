@@ -1,0 +1,20 @@
+name: TestsBuild
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+  schedule:
+    # Weekly.
+    - cron: '0 0 * * 0'
+
+jobs:
+  build-game:
+    name: Build game
+    runs-on: ubuntu-22.04
+    steps:
+     - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
+     - name: Install Engine
+       run: 
+    
