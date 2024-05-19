@@ -114,19 +114,25 @@ animations = [{
 "speed": 40.0
 }]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_fg46w"]
+radius = 13.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mm4re"]
+size = Vector2(102, 48)
+
 [node name="Player" type="CharacterBody2D"]
+collision_layer = 3
 floor_snap_length = 25.0
 script = ExtResource("1_rfyct")
 jump_veloicty = 750.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-50, 2)
 shape = SubResource("RectangleShape2D_2u52f")
 
 [node name="Trail" type="Line2D" parent="."]
 top_level = true
 z_index = -1
-position = Vector2(-50, 15)
+position = Vector2(0, 15)
 width = 100.0
 width_curve = SubResource("Curve_hoofo")
 gradient = SubResource("Gradient_crsqh")
@@ -138,13 +144,32 @@ libraries = {
 }
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-scale = Vector2(0.1, 0.1)
+position = Vector2(50, 0.25)
+scale = Vector2(0.100833, 0.0991667)
 sprite_frames = SubResource("SpriteFrames_j0hf6")
 animation = &"slap"
 
 [node name="SlapAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_p4w87")
 volume_db = 8.0
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+shape = SubResource("CircleShape2D_fg46w")
+
+[node name="DamageArea" type="Area2D" parent="."]
+position = Vector2(84, 0)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_mm4re")
+
+[connection signal="area_shape_entered" from="HurtBox" to="." method="_on_hurt_box_area_shape_entered"]
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
 
 [node name="WalkAudio" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_71xam")
