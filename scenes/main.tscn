@@ -532,7 +532,6 @@ navigation_polygon = SubResource("NavigationPolygon_ude43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
-[node name="StaticBody2D" parent="." instance=ExtResource("14_nmpls")]
+[node name="StaticBody2D" parent="." node_paths=PackedStringArray("Area") instance=ExtResource("14_nmpls")]
 position = Vector2(-365, -294)
-
-[connection signal="HealthDepleted" from="StaticBody2D" to="Player" method="_on_static_body_2d_health_depleted"]
+Area = NodePath("Area2D")
