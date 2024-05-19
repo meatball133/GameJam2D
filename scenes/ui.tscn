@@ -1,0 +1,40 @@
+[gd_scene load_steps=2 format=3 uid="uid://c0e7vcjou04x6"]
+
+[ext_resource type="Script" path="res://scripts/ui/Ui.cs" id="1_myfwa"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("StartButton", "startPanel")]
+process_mode = 3
+z_index = 5
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+script = ExtResource("1_myfwa")
+StartButton = NodePath("PanelContainer/MarginContainer/Button")
+startPanel = NodePath("PanelContainer")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -60.0
+offset_top = -35.0
+offset_right = 60.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(100, 50)
+layout_mode = 2
+text = "Start"
