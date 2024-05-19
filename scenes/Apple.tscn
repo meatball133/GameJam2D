@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c5rpuc68rf0sr"]
+
+[ext_resource type="Script" path="res://scripts/Apple.cs" id="1_x76wx"]
+[ext_resource type="Texture2D" uid="uid://dgvw1aspjpt14" path="res://textures/Apple.svg" id="2_8km1u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_b356c"]
+radius = 131.795
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cw2j2"]
+radius = 26.6833
+
+[node name="StaticBody2D" type="StaticBody2D" node_paths=PackedStringArray("Area")]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_x76wx")
+Area = NodePath("Area2D")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2, -4)
+scale = Vector2(0.092, 0.104)
+texture = ExtResource("2_8km1u")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_b356c")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, -3)
+shape = SubResource("CircleShape2D_cw2j2")
