@@ -13,10 +13,11 @@ extends Camera2D
 var target := global_position
 var max_y := global_position.y
 var is_end = false
+var is_scene = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if is_end:
+	if is_end or is_scene:
 		pass
 	if abs(player.global_position.x) < x_switch:
 		target.x = 0.0
@@ -38,6 +39,12 @@ func _process(delta: float) -> void:
 	
 	global_position = lerp(global_position, target, snap_speed)
 
+
+func cutscene():
+	is_scene = true
+	$AudioStreamPlayer2.playing = true
+	$AnimationPlayer.play("scene")
+
 func end():
 	is_end = true
 	%Music.stop()
@@ -46,4 +53,10 @@ func end():
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:
-	get_tree().quit()
+	if not is_scene:
+		get_tree().quit()
+	else:
+		is_scene = false
+		zoom = Vector2(1.75, 1.75)
+		$AnimationPlayer.stop()
+		%Music.play()
