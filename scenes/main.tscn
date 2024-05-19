@@ -336,11 +336,12 @@ script = ExtResource("7_hkprh")
 position = Vector2(351, -294)
 curve = SubResource("Curve2D_n88ln")
 
-[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox") instance=ExtResource("13_537f5")]
+[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
 Speed = 50.0
 Path = NodePath("..")
 NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(102, -157)

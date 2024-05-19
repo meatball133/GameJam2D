@@ -1,19 +1,45 @@
-[gd_scene load_steps=4 format=3 uid="uid://byiqxddjnlwof"]
+[gd_scene load_steps=7 format=3 uid="uid://byiqxddjnlwof"]
 
 [ext_resource type="Script" path="res://scripts/Larv.cs" id="1_imhsa"]
+[ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="2_2wdhm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_derjr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ffau3"]
 
-[node name="Larv" type="CharacterBody2D" node_paths=PackedStringArray("NavigationAgent", "HurtBox")]
+[sub_resource type="Animation" id="Animation_5x4hx"]
+resource_name = "Death"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.999),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 25)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_es40w"]
+_data = {
+"Death": SubResource("Animation_5x4hx")
+}
+
+[node name="Larv" type="CharacterBody2D" node_paths=PackedStringArray("Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer")]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("1_imhsa")
+Sprite = NodePath("Sprite2D")
 NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 1)
+scale = Vector2(0.296875, 0.328125)
+texture = ExtResource("2_2wdhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_derjr")
@@ -22,6 +48,13 @@ shape = SubResource("RectangleShape2D_derjr")
 debug_enabled = true
 
 [node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_ffau3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_es40w")
+}
