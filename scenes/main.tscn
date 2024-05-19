@@ -8,11 +8,6 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
-<<<<<<< Updated upstream
-=======
-[ext_resource type="Texture2D" uid="uid://cp7dptx55ik0h" path="res://textures/ground.png" id="7_n8bxu"]
-[ext_resource type="PackedScene" uid="uid://d0mrf1u6rysik" path="res://scenes/normal_branch.tscn" id="8_e1wu1"]
->>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
@@ -467,7 +462,6 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
-<<<<<<< Updated upstream
 [node name="Branch11" type="StaticBody2D" parent="TreeTrunk/Branches"]
 position = Vector2(474, -658)
 scale = Vector2(2.41504, 2.43945)
@@ -480,8 +474,6 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
-=======
->>>>>>> Stashed changes
 [node name="Branch4" type="StaticBody2D" parent="TreeTrunk/Branches"]
 position = Vector2(12, -302)
 scale = Vector2(1.99816, 1)
@@ -612,7 +604,6 @@ autoplay = true
 parameters/looping = true
 script = ExtResource("7_hkprh")
 
-<<<<<<< Updated upstream
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(364, -393)
 curve = SubResource("Curve2D_n88ln")
@@ -625,8 +616,6 @@ NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
 AnimationPlayer = NodePath("AnimationPlayer")
 
-=======
->>>>>>> Stashed changes
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(111, -262)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
