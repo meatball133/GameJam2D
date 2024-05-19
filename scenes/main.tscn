@@ -1,12 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=21 format=3 uid="uid://o824tquqxdf"]
 
-[ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
-[ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
+[ext_resource type="Texture2D" uid="uid://dp6kcchg2drur" path="res://textures/rutten_tree.png" id="2_5m2hr"]
+[ext_resource type="Texture2D" uid="uid://b4tiw5pq1fkkk" path="res://textures/fungera_for_fan.png" id="2_aegs6"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
-[ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
-[ext_resource type="PackedScene" uid="uid://bb8ew47r4w50f" path="res://scenes/player.tscn" id="4_bvi2o"]
-[ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Texture2D" uid="uid://tjknyyk0lwe1" path="res://textures/platform.png" id="4_a88bq"]
 [ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
@@ -14,9 +10,55 @@
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
+[ext_resource type="AudioStream" uid="uid://b4hn1p1hldmg5" path="res://music/mibbo_cutscene.mp3" id="13_6re4n"]
 [ext_resource type="PackedScene" path="res://scenes/ui.tscn" id="13_8levl"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
-[ext_resource type="PackedScene" uid="uid://c5rpuc68rf0sr" path="res://scenes/Apple.tscn" id="14_nmpls"]
+[ext_resource type="PackedScene" path="res://scenes/Apple.tscn" id="14_nmpls"]
+
+[sub_resource type="Animation" id="Animation_65wed"]
+resource_name = "cutscene"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5288, 5.8608, 8.658),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -2100), Vector2(0, -1900), Vector2(0, -1900), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.0646, 7.7256, 8.658),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.3, 0.3), Vector2(0.3, 0.3), Vector2(1.75, 1.75)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CutsceneText:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.0313),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.9, 0.9)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7h11"]
+_data = {
+"cutscene": SubResource("Animation_65wed")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
@@ -55,48 +97,29 @@ size_flags_vertical = 3
 StartButton = NodePath("PanelContainer/MarginContainer/Button")
 startPanel = NodePath("PanelContainer")
 
-[node name="TreeTrunk" type="Control" parent="."]
+[node name="Camera2D2" type="Camera2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(0, -2020.3)
+zoom = Vector2(0.299243, 0.299243)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D2"]
+libraries = {
+"": SubResource("AnimationLibrary_k7h11")
+}
+
+[node name="CutsceneText" type="Sprite2D" parent="Camera2D2"]
+position = Vector2(-4, 751)
+scale = Vector2(1.33, 1.33)
+texture = ExtResource("2_aegs6")
+region_enabled = true
+region_rect = Rect2(0, 400, 3840, 1258.04)
+
+[node name="TreeTrunk" type="Sprite2D" parent="."]
 z_index = -2
-layout_mode = 3
-anchors_preset = 0
-offset_top = -1190.0
-offset_bottom = -1190.0
-scale = Vector2(4.70375, 18.5573)
-
-[node name="TrunkBg" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(0.425193, 57.3898)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_xqglc")
-
-[node name="TrunkBg2" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(0.425, 37.452)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_xqglc")
-
-[node name="TrunkBg3" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(0.425193, 17.5672)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_xqglc")
-
-[node name="TrunkSide" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(-53.787, 57.39)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_cygdh")
-
-[node name="TrunkSide2" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(-53.787, 37.452)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_cygdh")
-
-[node name="TrunkSide3" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(70, 57.39)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_cygdh")
-
-[node name="TrunkSide4" type="Sprite2D" parent="TreeTrunk"]
-position = Vector2(70, 37.452)
-scale = Vector2(0.212596, 0.0538872)
-texture = ExtResource("1_cygdh")
+position = Vector2(-8, -1755)
+scale = Vector2(0.85, 0.85)
+texture = ExtResource("2_5m2hr")
+region_rect = Rect2(0, 0, 3488.57, 4300)
 
 [node name="Branches" type="Node" parent="TreeTrunk"]
 
@@ -511,6 +534,7 @@ unique_name_in_owner = true
 position = Vector2(-776, -27)
 
 [node name="Dirt" type="StaticBody2D" parent="."]
+z_index = -3
 texture_repeat = 2
 position = Vector2(-10, 1)
 
@@ -527,15 +551,6 @@ region_rect = Rect2(0, 20.8522, 4096, 235.148)
 [node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
 position = Vector2(476, -130)
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(500, -125)
-zoom = Vector2(1.75, 1.75)
-script = ExtResource("3_k7yvx")
-snap_x = 525.0
-x_switch = 275
-y_limit = 125
-snap_speed = 0.125
-
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("12_mcti0")
@@ -543,6 +558,10 @@ volume_db = -18.0
 autoplay = true
 parameters/looping = true
 script = ExtResource("7_hkprh")
+
+[node name="Cutscene" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("13_6re4n")
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(364, -393)
