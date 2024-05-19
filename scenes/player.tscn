@@ -4,6 +4,8 @@
 [ext_resource type="Script" path="res://scripts/trail.gd" id="2_s3jvb"]
 [ext_resource type="Texture2D" uid="uid://6va2lcx8wvns" path="res://textures/slime_spritesheet.png" id="3_n2nog"]
 [ext_resource type="AudioStream" uid="uid://cmmdxdq1rgwx2" path="res://music/slap.mp3" id="4_p4w87"]
+[ext_resource type="AudioStream" uid="uid://b0hknh7326qrb" path="res://music/mibbo_walk.mp3" id="5_71xam"]
+[ext_resource type="AudioStream" uid="uid://ckoqh7iwthou" path="res://music/mibbo_jump.mp3" id="6_5rfax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2u52f"]
 size = Vector2(30, 24)
@@ -147,7 +149,7 @@ scale = Vector2(0.100833, 0.0991667)
 sprite_frames = SubResource("SpriteFrames_j0hf6")
 animation = &"slap"
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+[node name="SlapAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_p4w87")
 volume_db = 8.0
 
@@ -168,3 +170,13 @@ shape = SubResource("RectangleShape2D_mm4re")
 
 [connection signal="area_shape_entered" from="HurtBox" to="." method="_on_hurt_box_area_shape_entered"]
 [connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+
+[node name="WalkAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_71xam")
+volume_db = -12.0
+
+[node name="JumpAudio" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_5rfax")
+volume_db = -6.0
+
+[connection signal="finished" from="WalkAudio" to="WalkAudio" method="_on_finished"]

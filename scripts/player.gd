@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var caterpillar_force = 750
 
 var time_since_floor := 0.0
+@onready var random = RandomNumberGenerator.new()
 @onready var trail : Line2D = $Trail
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 @onready var damage_box = $DamageArea
@@ -40,14 +41,19 @@ func _physics_process(delta: float) -> void:
 		time_since_floor = 0
 
 	# Handle jump.
-	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time:
+	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time and velocity.y >= 0:
+    random.randomize()
+		$JumpAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$JumpAudio.play()
 		velocity.y = - jump_veloicty
 	
 	# Handle slap
 	if Input.is_action_just_pressed("slap"):
-		$AudioStreamPlayer2D.play()
 		damage_box.monitorable = true
 		damage_box.position = abs(damage_box.position) * walk_direction
+		random.randomize()
+		$SlapAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$SlapAudio.play()
 		sprite.stop()
 		sprite.play("slap")
 	else:
@@ -59,6 +65,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
+		
+		# Randomize pitchd
+		random.randomize()
+		$WalkAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$WalkAudio.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
