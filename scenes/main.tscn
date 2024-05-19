@@ -303,7 +303,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch15" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-284, -930)
+position = Vector2(-276, -915)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch15"]
@@ -316,7 +316,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch20" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-738, -907)
+position = Vector2(-709, -951)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch20"]
@@ -329,7 +329,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch21" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-641, -1034)
+position = Vector2(-593, -1078)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch21"]
@@ -342,7 +342,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch22" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-327, -1117)
+position = Vector2(-333, -1171)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch22"]
@@ -407,7 +407,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch28" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-618, -1644)
+position = Vector2(-618, -1667)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch28"]
@@ -420,7 +420,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch29" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-869, -1532)
+position = Vector2(-859, -1548)
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch29"]
@@ -446,7 +446,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch30" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-8, -1721)
+position = Vector2(-9, -1756)
 scale = Vector2(6.51911, 3)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch30"]
@@ -459,7 +459,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch16" type="StaticBody2D" parent="TreeTrunk/Branches"]
-position = Vector2(-662, -801)
+position = Vector2(-619, -841)
 scale = Vector2(1.45111, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch16"]
