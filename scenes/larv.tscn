@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://byiqxddjnlwof"]
 
 [ext_resource type="Script" path="res://scripts/Larv.cs" id="1_imhsa"]
-[ext_resource type="Texture2D" uid="uid://beyiklljstowp" path="res://textures/Leaf-gamejam.svg" id="2_2wdhm"]
+[ext_resource type="Texture2D" uid="uid://ckdxb1we2ewue" path="res://textures/Leaf-hp4-gamejam.svg" id="2_lpe7p"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_derjr"]
 
@@ -39,7 +39,7 @@ AnimationPlayer = NodePath("AnimationPlayer")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, 1)
 scale = Vector2(0.296875, 0.328125)
-texture = ExtResource("2_2wdhm")
+texture = ExtResource("2_lpe7p")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_derjr")
