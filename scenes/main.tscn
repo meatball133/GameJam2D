@@ -14,6 +14,7 @@
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
+[ext_resource type="PackedScene" uid="uid://u7yfdo2qrh4x" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
@@ -94,6 +95,24 @@ scale = Vector2(1.31816, 1)
 scale = Vector2(1, 0.15625)
 texture = ExtResource("2_yw5w0")
 
+[node name="Sprite2D" type="Sprite2D" parent="Player"]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("4_ghnhg")
+
+[node name="Trail" type="Line2D" parent="Player"]
+top_level = true
+z_index = -1
+position = Vector2(-50, 15)
+width = 100.0
+width_curve = SubResource("Curve_hoofo")
+gradient = SubResource("Gradient_crsqh")
+script = ExtResource("5_txe5k")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_aitah")
+}
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6"]
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
@@ -160,6 +179,8 @@ position = Vector2(-9.19978, -37)
 scale = Vector2(0.0650984, 0.134446)
 texture = ExtResource("12_bplls")
 
+[node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
+
 [node name="Branch2" type="StaticBody2D" parent="."]
 position = Vector2(-508, -176)
 scale = Vector2(4.69154, 1)
@@ -219,11 +240,12 @@ script = ExtResource("7_hkprh")
 position = Vector2(351, -294)
 curve = SubResource("Curve2D_n88ln")
 
-[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox") instance=ExtResource("13_537f5")]
+[node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
 Speed = 50.0
 Path = NodePath("..")
 NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
 
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(102, -157)

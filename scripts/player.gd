@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 
 @export var speed = 300.0
+@export var max_x = 850.0
 @export_range(0, 2000) var jump_veloicty = 400.0
 @export_range(0, 1) var coyote_time = 0.2
 @export var dash = 50.0
@@ -11,6 +12,10 @@ var time_since_floor := 0.0
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
+	if global_position.x > max_x:
+		global_position.x = max_x
+	if global_position.x < - max_x:
+		global_position.x = - max_x
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
