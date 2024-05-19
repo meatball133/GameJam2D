@@ -15,10 +15,6 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
-        with:
-          dotnet-version: '8.x'
       - name: Install Engine
         run: ./bin/test.sh
     
