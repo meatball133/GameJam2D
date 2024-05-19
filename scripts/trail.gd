@@ -15,3 +15,5 @@ func _process(_delta: float) -> void:
 	
 	for point in queue:
 		add_point(point)
+		
+		
