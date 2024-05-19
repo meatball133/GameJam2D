@@ -1,0 +1,57 @@
+[gd_scene load_steps=4 format=3 uid="uid://b312epqkxa20s"]
+
+[ext_resource type="Script" path="res://scripts/camera.gd" id="1_w8t0u"]
+
+[sub_resource type="Animation" id="Animation_65wed"]
+resource_name = "cutscene"
+length = 9.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8.5914, 8.658),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, -2100), Vector2(0, -1900), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:zoom")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.0979),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.25, 0.25), Vector2(0.3, 0.3)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k7h11"]
+_data = {
+"cutscene": SubResource("Animation_65wed")
+}
+
+[node name="Camera2D" type="Camera2D"]
+position = Vector2(0, -2100)
+zoom = Vector2(0.25, 0.25)
+script = ExtResource("1_w8t0u")
+snap_x = 525.0
+x_switch = 275
+y_limit = 125
+snap_speed = 0.125
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_k7h11")
+}
+
+[node name="CutsceneText" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-4, 751)
+scale = Vector2(0.528053, 0.528053)
+region_enabled = true
+region_rect = Rect2(0, 400, 3840, 1258.04)

@@ -11,6 +11,7 @@ func leaf_momento():
 	leaves -= 1
 	
 	if leaves <= 0:
+		get_parent().leffe_moment()
 		db = music.volume_db
 		music.volume_db -= db_diff
 		$AudioStreamPlayer2D.play()
