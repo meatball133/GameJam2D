@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://c5rpuc68rf0sr"]
 
 [ext_resource type="Script" path="res://scripts/Apple.cs" id="1_x76wx"]
-[ext_resource type="Texture2D" uid="uid://dgvw1aspjpt14" path="res://textures/Apple.svg" id="2_8km1u"]
+[ext_resource type="Texture2D" uid="uid://dlynxwdone64y" path="res://textures/apple.png" id="2_u7xru"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_b356c"]
 radius = 131.795
@@ -16,9 +16,9 @@ script = ExtResource("1_x76wx")
 Area = NodePath("Area2D")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(2, -4)
-scale = Vector2(0.092, 0.104)
-texture = ExtResource("2_8km1u")
+position = Vector2(2.075, 4.305)
+scale = Vector2(0.189, 0.214)
+texture = ExtResource("2_u7xru")
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0
