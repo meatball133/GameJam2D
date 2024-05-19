@@ -105,3 +105,7 @@ func _on_hurt_box_area_shape_entered(area_rid: RID, area: Area2D, area_shape_ind
 	if normalized.y > 0.0:
 		normalized.y = -0.65
 	velocity.y = normalized.y *  caterpillar_force * (1.75 - abs(normalized.x))
+
+
+func _on_static_body_2d_health_depleted() -> void:
+	jump_veloicty += 100

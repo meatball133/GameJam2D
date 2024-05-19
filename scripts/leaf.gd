@@ -20,12 +20,16 @@ var textures = [
 
 var health = 0
 
+func _process(delta: float):
+	if abs(get_parent().music.distance_to_beat()) < time_range / 3 and int(get_parent().music.distance_in_beats()) % 4 < 2:
+		$AnimationPlayer.play("bounce")
+
 func _input_event(viewport, event, shape_idx):
 	if event.is_action_pressed("beat") and health < health_goal:
 		self.on_click()
 
 func on_click():
-	if abs(get_parent().distance_to_beat()) < time_range:
+	if abs(get_parent().music.distance_to_beat()) < time_range:
 		health += 1
 		# particles and sound effect
 		on_time.emitting = true
@@ -35,6 +39,7 @@ func on_click():
 		health = 0
 		# fail particles
 		off_time.emitting = true
+	print(get_parent().music.distance_to_beat())
 
 	sprite.texture = textures[health]
 

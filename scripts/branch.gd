@@ -7,9 +7,6 @@ const db_diff = 8
 
 @onready var db = music.volume_db
 
-func distance_to_beat():
-	return music.distance_to_beat()
-
 func leaf_momento():
 	leaves -= 1
 	

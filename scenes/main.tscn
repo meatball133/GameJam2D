@@ -2,17 +2,21 @@
 
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
-[ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="2_yw5w0"]
-[ext_resource type="Texture2D" uid="uid://b2fra0u4apoq0" path="res://textures/Placeholder-Dirt-Ground-Gamejam.svg" id="3_17gvx"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
+[ext_resource type="PackedScene" uid="uid://bb8ew47r4w50f" path="res://scenes/player.tscn" id="4_bvi2o"]
+[ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="4_bvi2o"]
+[ext_resource type="Texture2D" uid="uid://tjknyyk0lwe1" path="res://textures/platform.png" id="4_a88bq"]
 [ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+[ext_resource type="Texture2D" uid="uid://cp7dptx55ik0h" path="res://textures/ground.png" id="7_n8bxu"]
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://c0e7vcjou04x6" path="res://scenes/ui.tscn" id="13_8levl"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
+[ext_resource type="PackedScene" uid="uid://c5rpuc68rf0sr" path="res://scenes/Apple.tscn" id="14_nmpls"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
@@ -200,6 +204,7 @@ one_way_collision = true
 
 [node name="Branch8" type="StaticBody2D" parent="TreeTrunk/Branches"]
 position = Vector2(-681, -516)
+
 scale = Vector2(1.31816, 1)
 
 [node name="Sprite2D" type="Sprite2D" parent="TreeTrunk/Branches/Branch8"]
@@ -343,6 +348,7 @@ shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
 [node name="Branch22" type="StaticBody2D" parent="TreeTrunk/Branches"]
+
 position = Vector2(-327, -1117)
 scale = Vector2(1.31816, 1)
 
@@ -611,7 +617,7 @@ curve = SubResource("Curve2D_n88ln")
 [node name="Larv" parent="Path2D" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
 Speed = 50.0
 Path = NodePath("..")
-Sprite = NodePath("Sprite2D")
+Sprite = NodePath("AnimatedSprite2D")
 NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
 AnimationPlayer = NodePath("AnimationPlayer")
@@ -621,3 +627,7 @@ position = Vector2(111, -262)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="StaticBody2D" parent="." node_paths=PackedStringArray("Area") instance=ExtResource("14_nmpls")]
+position = Vector2(-365, -294)
+Area = NodePath("Area2D")
