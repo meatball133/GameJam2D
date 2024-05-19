@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/leaf.gd" id="1_bk8x1"]
 [ext_resource type="Shader" path="res://shaders/leaf.gdshader" id="2_6c3el"]
-[ext_resource type="AudioStream" path="res://music/leaf_complete.mp3" id="4_la0pk"]
+[ext_resource type="AudioStream" uid="uid://jhvqvs5gwdwt" path="res://music/leaf_complete.mp3" id="4_la0pk"]
 [ext_resource type="AudioStream" uid="uid://csmwyj0yj4t7q" path="res://music/leaf_sound_effect.mp3" id="5_qkvi2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5dms"]
