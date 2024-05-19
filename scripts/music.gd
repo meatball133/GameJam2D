@@ -15,3 +15,6 @@ func _process(delta: float) -> void:
 func distance_to_beat():
 	var in_beats : float = round(song_position / seconds_per_beat)
 	return song_position - in_beats * seconds_per_beat
+
+func distance_in_beats():
+	return round(song_position / seconds_per_beat)
