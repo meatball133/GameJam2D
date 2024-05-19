@@ -1,7 +1,4 @@
 [gd_scene load_steps=29 format=3 uid="uid://o824tquqxdf"]
-
-[ext_resource type="Texture2D" uid="uid://ljq8xtr8tpyf" path="res://textures/rutten_tree.png" id="2_5m2hr"]
-[ext_resource type="Shader" path="res://shaders/branch.gdshader" id="2_iof6u"]
 [ext_resource type="Texture2D" uid="uid://c7vvvmkvyfb1h" path="res://textures/WASD-sign-jam.svg" id="3_82046"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="Texture2D" uid="uid://tjknyyk0lwe1" path="res://textures/platform.png" id="4_a88bq"]
