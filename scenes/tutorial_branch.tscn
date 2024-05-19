@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=3 uid="uid://u7yfdo2qrh4x"]
+
+[ext_resource type="Texture2D" uid="uid://cjt03alrium5x" path="res://textures/rotten_branch_1.png" id="1_6ad2t"]
+[ext_resource type="Script" path="res://scripts/branch.gd" id="1_1873b"]
+[ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="2_lihoi"]
+[ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="4_nu2yl"]
+[ext_resource type="Texture2D" uid="uid://cv43f3jbug5mf" path="res://textures/slap-sign-gamejam(1)-svg.png" id="5_xsrn7"]
+[ext_resource type="AudioStream" uid="uid://duldk7h5xfja4" path="res://music/tree_complete.mp3" id="6_2b6gs"]
+[ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="7_4qcw7"]
+
+[sub_resource type="Curve" id="Curve_g5akk"]
+_data = [Vector2(0.011236, 1), 0.0, 0.0, 0, 0, Vector2(0.988764, 0), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_nrf44"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[node name="TutorialBranch" type="StaticBody2D"]
+position = Vector2(454, -131)
+script = ExtResource("1_1873b")
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(-16.149, 0)
+scale = Vector2(1.88939, 1)
+polygon = PackedVector2Array(-72.6297, -26, -31.9571, -12, -6.77878, -3, 45.0304, -3, 110.397, -22, 82.3137, 20, 23.2415, 18, -24.2099, 21, -74.0823, 9)
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(37, 28)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_6ad2t")
+
+[node name="Leaf3" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(166, -6)
+rotation = -1.33364
+scale = Vector2(1.53805, 1.53805)
+
+[node name="Leaf4" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(197, -63)
+rotation = -0.3426
+scale = Vector2(1.53805, 1.53805)
+
+[node name="Leaf7" parent="." instance=ExtResource("2_lihoi")]
+position = Vector2(98, -32)
+rotation = -1.0315
+scale = Vector2(1.53805, 1.53805)
+
+[node name="ArrowSign" type="Sprite2D" parent="."]
+position = Vector2(56.9999, -21)
+scale = Vector2(0.0795668, 0.0742188)
+texture = ExtResource("4_nu2yl")
+
+[node name="BeatSign" type="Sprite2D" parent="."]
+position = Vector2(-11, -37)
+scale = Vector2(0.28125, 0.28125)
+texture = ExtResource("5_xsrn7")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_2b6gs")
+volume_db = 8.0
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+visible = false
+position = Vector2(129, 0)
+emitting = false
+amount = 250
+lifetime = 0.75
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("7_4qcw7")
+emission_shape = 1
+emission_sphere_radius = 40.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 216.5
+initial_velocity_max = 340.22
+angular_velocity_min = 100.0
+angular_velocity_max = 1000.0
+damping_min = 1.0
+damping_max = 2.0
+scale_amount_min = 0.0
+scale_amount_curve = SubResource("Curve_g5akk")
+color = Color(1, 1, 1, 0.647059)
+color_ramp = SubResource("Gradient_nrf44")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 1.25
+
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

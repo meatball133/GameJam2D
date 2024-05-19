@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/leaf.gd" id="1_bk8x1"]
 [ext_resource type="Shader" path="res://shaders/leaf.gdshader" id="2_6c3el"]
-[ext_resource type="Texture2D" uid="uid://crpveitm0hld4" path="res://textures/Leaf-hp0-gamejam.svg" id="3_bvvne"]
-[ext_resource type="Texture2D" uid="uid://cantsi63d7wy4" path="res://icon.svg" id="4_pyagt"]
+[ext_resource type="AudioStream" uid="uid://jhvqvs5gwdwt" path="res://music/leaf_complete.mp3" id="4_la0pk"]
 [ext_resource type="AudioStream" uid="uid://csmwyj0yj4t7q" path="res://music/leaf_sound_effect.mp3" id="5_qkvi2"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5dms"]
@@ -11,7 +10,9 @@ shader = ExtResource("2_6c3el")
 shader_parameter/sway_strength = 0.1
 shader_parameter/sway_speed = 3.5
 shader_parameter/sway_speed_diff = 0.1
-shader_parameter/leaf = ExtResource("3_bvvne")
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_oavox"]
+load_path = "res://.godot/imported/Leaf-hp0-gamejam.svg-663077a31c976ab412552ef84c710a1e.ctex"
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iib4u"]
 radius = 17.0
@@ -30,11 +31,11 @@ position = Vector2(77.9559, -47)
 script = ExtResource("1_bk8x1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture_repeat = 2
+texture_repeat = 1
 material = SubResource("ShaderMaterial_c5dms")
 rotation = 0.518363
-scale = Vector2(0.2, 0.163)
-texture = ExtResource("4_pyagt")
+scale = Vector2(0.366428, 0.342573)
+texture = SubResource("CompressedTexture2D_oavox")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_iib4u")
@@ -42,7 +43,7 @@ shape = SubResource("CircleShape2D_iib4u")
 [node name="ParticlesOnTime" type="CPUParticles2D" parent="."]
 emitting = false
 amount = 16
-lifetime = 0.5
+lifetime = 0.3
 one_shot = true
 explosiveness = 1.0
 spread = 180.0
@@ -96,3 +97,7 @@ stream = ExtResource("5_qkvi2")
 volume_db = 5.0
 max_polyphony = 8
 panning_strength = 0.0
+
+[node name="AudioStreamPlayer2D2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_la0pk")
+volume_db = 10.0

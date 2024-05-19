@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxnny42mg18hr"
-path="res://.godot/imported/beat-sign-gamejam.png-0fd5035d8a05076fcea8a3efd759d7a7.ctex"
+uid="uid://cv43f3jbug5mf"
+path="res://.godot/imported/slap-sign-gamejam(1)-svg.png-e5613bedb7e1341ee82022b7f940aa71.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/beat-sign-gamejam.png"
-dest_files=["res://.godot/imported/beat-sign-gamejam.png-0fd5035d8a05076fcea8a3efd759d7a7.ctex"]
+source_file="res://textures/slap-sign-gamejam(1)-svg.png"
+dest_files=["res://.godot/imported/slap-sign-gamejam(1)-svg.png-e5613bedb7e1341ee82022b7f940aa71.ctex"]
 
 [params]
 
