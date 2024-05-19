@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beyiklljstowp"
-path="res://.godot/imported/Leaf-gamejam.svg-e431fd16483ae3210095fb91bc860384.ctex"
+uid="uid://fl4q7v4m5kr1"
+path="res://.godot/imported/slap-sign-gamejam(1)-svg.svg-2f909596c19299cdb757abb8f54c55a2.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://textures/Leaf-gamejam.svg"
-dest_files=["res://.godot/imported/Leaf-gamejam.svg-e431fd16483ae3210095fb91bc860384.ctex"]
+source_file="res://textures/slap-sign-gamejam(1)-svg.svg"
+dest_files=["res://.godot/imported/slap-sign-gamejam(1)-svg.svg-2f909596c19299cdb757abb8f54c55a2.ctex"]
 
 [params]
 

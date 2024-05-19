@@ -137,8 +137,7 @@ position = Vector2(0.5, 2)
 shape = SubResource("RectangleShape2D_2u52f")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player"]
-position = Vector2(0, 2.68373)
-scale = Vector2(0.108946, 0.0910542)
+scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_ghnhg")
 
 [node name="Trail" type="Line2D" parent="Player"]
