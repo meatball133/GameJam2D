@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=22 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
@@ -8,6 +8,11 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="3_k7yvx"]
 [ext_resource type="PackedScene" uid="uid://8dcyp5hcoap6" path="res://scenes/player.tscn" id="4_bvi2o"]
 [ext_resource type="Script" path="res://scripts/music.gd" id="7_hkprh"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://cp7dptx55ik0h" path="res://textures/ground.png" id="7_n8bxu"]
+[ext_resource type="PackedScene" uid="uid://d0mrf1u6rysik" path="res://scenes/normal_branch.tscn" id="8_e1wu1"]
+>>>>>>> Stashed changes
 [ext_resource type="PackedScene" uid="uid://b3blgpot80vsh" path="res://scenes/tutorial_branch.tscn" id="9_00cci"]
 [ext_resource type="Texture2D" uid="uid://5tskdxkjc66f" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
@@ -17,17 +22,35 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
-
 [sub_resource type="Curve2D" id="Curve2D_n88ln"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, 19, -2, 0, 0, 0, 0, 450, -14, 0, 0, 0, 0, 528, -15, 0, 0, 0, 0, 19, -2)
 }
 point_count = 4
 
+[sub_resource type="Curve2D" id="Curve2D_5h44m"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 19, -2, 0, 0, 0, 0, 448, -3, 0, 0, 0, 0, 531, 1, 0, 0, 0, 0, 19, -2)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_uww5d"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 19, -2, 0, 0, 0, 0, 383, 2, 0, 0, 0, 0, 382, 2, 0, 0, 0, 0, 19, -2)
+}
+point_count = 4
+
+[sub_resource type="Curve2D" id="Curve2D_yfhjt"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 19, -2, 0, 0, 0, 0, 119, 0, 0, 0, 0, 0, 118, 0, 0, 0, 0, 0, 19, -2)
+}
+point_count = 4
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
+
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_ude43"]
-vertices = PackedVector2Array(804.539, -145.719, 195.078, -127.344, 198.102, -157.539, 807.367, -195.32)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+vertices = PackedVector2Array(804.539, -145.719, 250.898, -129.023, 195.078, -127.344, 198.102, -157.539, 807.367, -195.32)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4)])
 outlines = Array[PackedVector2Array]([PackedVector2Array(184, -117, 814, -136, 818, -206, 189, -167)])
 
 [node name="Main" type="Node2D"]
@@ -444,6 +467,7 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
+<<<<<<< Updated upstream
 [node name="Branch11" type="StaticBody2D" parent="TreeTrunk/Branches"]
 position = Vector2(474, -658)
 scale = Vector2(2.41504, 2.43945)
@@ -456,6 +480,8 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
+=======
+>>>>>>> Stashed changes
 [node name="Branch4" type="StaticBody2D" parent="TreeTrunk/Branches"]
 position = Vector2(12, -302)
 scale = Vector2(1.99816, 1)
@@ -467,6 +493,83 @@ texture = ExtResource("2_yw5w0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TreeTrunk/Branches/Branch4"]
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
+
+[node name="Enemies" type="Node" parent="TreeTrunk"]
+
+[node name="Path2D" type="Path2D" parent="TreeTrunk/Enemies"]
+position = Vector2(364, -393)
+curve = SubResource("Curve2D_n88ln")
+
+[node name="Larv" parent="TreeTrunk/Enemies/Path2D" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+Sprite = NodePath("AnimatedSprite2D")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Path2D2" type="Path2D" parent="TreeTrunk/Enemies"]
+position = Vector2(-794, -292)
+curve = SubResource("Curve2D_5h44m")
+
+[node name="Larv" parent="TreeTrunk/Enemies/Path2D2" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+Sprite = NodePath("AnimatedSprite2D")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Path2D5" type="Path2D" parent="TreeTrunk/Enemies"]
+position = Vector2(-923, -1443)
+curve = SubResource("Curve2D_uww5d")
+
+[node name="Larv" parent="TreeTrunk/Enemies/Path2D5" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+Sprite = NodePath("AnimatedSprite2D")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Path2D3" type="Path2D" parent="TreeTrunk/Enemies"]
+position = Vector2(-323, -937)
+curve = SubResource("Curve2D_yfhjt")
+
+[node name="Larv" parent="TreeTrunk/Enemies/Path2D3" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+Sprite = NodePath("AnimatedSprite2D")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Path2D4" type="Path2D" parent="TreeTrunk/Enemies"]
+position = Vector2(-104, -1196)
+curve = SubResource("Curve2D_yfhjt")
+
+[node name="Larv" parent="TreeTrunk/Enemies/Path2D4" node_paths=PackedStringArray("Path", "Sprite", "NavigationAgent", "HurtBox", "AnimationPlayer") instance=ExtResource("13_537f5")]
+Speed = 50.0
+Path = NodePath("..")
+Sprite = NodePath("AnimatedSprite2D")
+NavigationAgent = NodePath("NavigationAgent2D")
+HurtBox = NodePath("Area2D")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="Leffe" type="Node" parent="TreeTrunk"]
+
+[node name="TutorialBranch" parent="TreeTrunk/Leffe" instance=ExtResource("9_00cci")]
+position = Vector2(476, -130)
+
+[node name="NormalBranch" parent="TreeTrunk/Leffe" instance=ExtResource("8_e1wu1")]
+position = Vector2(476, -648)
+
+[node name="NormalBranch2" parent="TreeTrunk/Leffe" instance=ExtResource("8_e1wu1")]
+position = Vector2(-870, -684)
+
+[node name="NormalBranch3" parent="TreeTrunk/Leffe" instance=ExtResource("8_e1wu1")]
+position = Vector2(-929, -1821)
+rotation = 0.4758
 
 [node name="WASDSign" type="Sprite2D" parent="."]
 position = Vector2(-707, -29)
@@ -492,9 +595,6 @@ texture = ExtResource("3_17gvx")
 region_enabled = true
 region_rect = Rect2(0, 176.985, 2000, 94)
 
-[node name="TutorialBranch" parent="." instance=ExtResource("9_00cci")]
-position = Vector2(476, -130)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
 zoom = Vector2(1.75, 1.75)
@@ -512,6 +612,7 @@ autoplay = true
 parameters/looping = true
 script = ExtResource("7_hkprh")
 
+<<<<<<< Updated upstream
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(364, -393)
 curve = SubResource("Curve2D_n88ln")
@@ -524,6 +625,8 @@ NavigationAgent = NodePath("NavigationAgent2D")
 HurtBox = NodePath("Area2D")
 AnimationPlayer = NodePath("AnimationPlayer")
 
+=======
+>>>>>>> Stashed changes
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(111, -262)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
