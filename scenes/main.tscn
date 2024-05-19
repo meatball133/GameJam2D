@@ -186,6 +186,7 @@ unique_name_in_owner = true
 stream = ExtResource("12_mcti0")
 volume_db = -18.0
 autoplay = true
+parameters/looping = true
 script = ExtResource("7_hkprh")
 
 [node name="Path2D" type="Path2D" parent="."]

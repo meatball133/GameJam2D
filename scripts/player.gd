@@ -8,6 +8,7 @@ extends CharacterBody2D
 @export var dash = 50.0
 
 var time_since_floor := 0.0
+@onready var random = RandomNumberGenerator.new()
 @onready var trail : Line2D = $Trail
 @onready var sprite : AnimatedSprite2D = $AnimatedSprite2D
 
@@ -30,11 +31,16 @@ func _physics_process(delta: float) -> void:
 
 	# Handle jump.
 	if Input.is_action_just_pressed("jump") and time_since_floor <= coyote_time and velocity.y >= 0:
+    random.randomize()
+		$JumpAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$JumpAudio.play()
 		velocity.y = - jump_veloicty
 		
 	# Handle slap
 	if Input.is_action_just_pressed("slap"):
-		$AudioStreamPlayer2D.play()
+		random.randomize()
+		$SlapAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$SlapAudio.play()
 		sprite.stop()
 		sprite.play("slap")
 
@@ -43,6 +49,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("left", "right")
 	if direction:
 		velocity.x = direction * speed
+		
+		# Randomize pitchd
+		random.randomize()
+		$WalkAudio.set_pitch_scale(random.randfn(1.0, 0.2))
+		$WalkAudio.play()
 	else:
 		velocity.x = move_toward(velocity.x, 0, speed)
 	
