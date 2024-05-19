@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://b312epqkxa20s"]
+[gd_scene load_steps=4 format=3 uid="uid://b312epqkxa20s"]
 
 [ext_resource type="Script" path="res://scripts/camera.gd" id="1_w8t0u"]
-[ext_resource type="Texture2D" path="res://textures/fungera_for_fan.png" id="2_f03mb"]
 
 [sub_resource type="Animation" id="Animation_65wed"]
 resource_name = "cutscene"
@@ -54,6 +53,5 @@ libraries = {
 visible = false
 position = Vector2(-4, 751)
 scale = Vector2(0.528053, 0.528053)
-texture = ExtResource("2_f03mb")
 region_enabled = true
 region_rect = Rect2(0, 400, 3840, 1258.04)
