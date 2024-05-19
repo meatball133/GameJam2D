@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://o824tquqxdf"]
+[gd_scene load_steps=20 format=3 uid="uid://o824tquqxdf"]
 
 [ext_resource type="Texture2D" uid="uid://bm7pp4x5ftvox" path="res://textures/trunk_side.png" id="1_cygdh"]
 [ext_resource type="Texture2D" uid="uid://dx1axoa3uhmp0" path="res://textures/trunk_bg.png" id="1_xqglc"]
@@ -11,14 +11,15 @@
 [ext_resource type="Texture2D" uid="uid://3onjcfjyrgx" path="res://textures/branch_1.png" id="9_0sjd1"]
 [ext_resource type="PackedScene" uid="uid://b4a3u7jsv8mwh" path="res://scenes/leaf.tscn" id="10_1hk61"]
 [ext_resource type="Texture2D" uid="uid://cogj53iqb4nga" path="res://textures/arrow-sign-gamejam.svg" id="11_2ow0m"]
+[ext_resource type="Texture2D" uid="uid://cvg8aohprpktd" path="res://textures/slap-sign-gamejam.png" id="11_78hvb"]
 [ext_resource type="Texture2D" uid="uid://bxnny42mg18hr" path="res://textures/beat-sign-gamejam.png" id="12_bplls"]
 [ext_resource type="AudioStream" uid="uid://bs51xuc065oex" path="res://music/mibbo_theme.mp3" id="12_mcti0"]
 [ext_resource type="PackedScene" uid="uid://byiqxddjnlwof" path="res://scenes/larv.tscn" id="13_537f5"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m3jal"]
 size = Vector2(128, 20)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_wye2e"]
 
 [sub_resource type="Curve2D" id="Curve2D_n88ln"]
 _data = {
@@ -85,6 +86,18 @@ texture = ExtResource("3_82046")
 unique_name_in_owner = true
 position = Vector2(-776, -27)
 
+[node name="Branch6" type="StaticBody2D" parent="."]
+position = Vector2(161, -235)
+scale = Vector2(1.31816, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="Branch6"]
+scale = Vector2(1, 0.15625)
+texture = ExtResource("2_yw5w0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Branch6"]
+shape = SubResource("RectangleShape2D_m3jal")
+one_way_collision = true
+
 [node name="Dirt" type="StaticBody2D" parent="."]
 texture_repeat = 2
 position = Vector2(-10, 1)
@@ -112,6 +125,14 @@ texture = ExtResource("2_yw5w0")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Branch"]
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
+
+[node name="SlapSign" type="Sprite2D" parent="Branch"]
+z_index = -1
+position = Vector2(-59.417, -39.7187)
+rotation = 0.161832
+scale = Vector2(0.0256855, 0.118518)
+skew = -0.154363
+texture = ExtResource("11_78hvb")
 
 [node name="Branch5" type="StaticBody2D" parent="."]
 position = Vector2(454, -131)
@@ -178,9 +199,6 @@ texture = ExtResource("2_yw5w0")
 shape = SubResource("RectangleShape2D_m3jal")
 one_way_collision = true
 
-[node name="Leaf" parent="Branch4" instance=ExtResource("10_1hk61")]
-position = Vector2(502.215, -112)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(500, -125)
 zoom = Vector2(1.75, 1.75)
@@ -210,3 +228,5 @@ HurtBox = NodePath("Area2D")
 [node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
 position = Vector2(102, -157)
 navigation_polygon = SubResource("NavigationPolygon_ude43")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
