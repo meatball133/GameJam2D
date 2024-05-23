@@ -51,12 +51,10 @@ class TsncParser
                 @nodes << Node.new(line_content[0], type, id, properties)
             elsif !line.blank?
                 property = line.gsub(" ", "").split("=")
-                p property
                 if property[1].starts_with?("ExtResource")
                     verify_resource(property[1])
                 elsif property[1] == "{"
                     i += 1
-                    p i
                     while file_content_lines[i] != "}"
                         property = file_content_lines[i].split(":")
                         if property[1].starts_with?("ExtResource") || property[1].starts_with?("SubResource")

@@ -18,5 +18,5 @@ jobs:
     steps:
       - uses: actions/checkout@a5ac7e51b41094c92402da3b24376905380afc29
       - name: Run tsnc tests
-        run: crystal src/tscn_parser.cr.cr
+        run: crystal src/tscn_parser.cr
     
