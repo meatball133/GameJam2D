@@ -6,7 +6,7 @@ class TsncParser
         end
     end
 
-    getter nodes : Array(Node), missing_files : Array(String)
+    getter nodes : Array(Node), missing_files : Array(String), missing_resources : Array(String)
 
     def initialize(@scene_files = [] of String)
         @nodes = [] of Node
