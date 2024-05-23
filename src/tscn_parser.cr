@@ -35,7 +35,7 @@ class TsncParser
                 properties = {} of String => String
                 line_content[1..].each do |content|
                     if content.starts_with?("id=")
-                        id = content[3..-1]
+                        id = content[4..-2]
                     elsif content.starts_with?("type=")
                         type = content[5..-1]
                     elsif content.starts_with?("path=")
@@ -87,14 +87,14 @@ class TsncParser
     end
 
     private def verify_resource(resource)
-        resource_id = resource[11..-1]
-        if !@nodes.any?{|x| x.id == resource_id} && !@missing_resources.include?(resource_id)
+        resource_id = resource[13..-3]
+        if !@nodes.any?{|x| x.id == resource_id} && !@missing_resources.includes?(resource_id)
             @missing_resources << resource_id
         end
     end
 
     private def verify_file(file)
-        if !File.exists?(file) && !@missing_files.include?(file)
+        if !File.exists?(file) && !@missing_files.includes?(file)
             @missing_files << file
         end
     end
