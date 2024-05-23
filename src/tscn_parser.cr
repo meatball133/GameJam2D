@@ -88,13 +88,13 @@ class TsncParser
 
     private def verify_resource(resource)
         resource_id = resource[11..-1]
-        if !@nodes.any?{|x| x.id == resource_id}
+        if !@nodes.any?{|x| x.id == resource_id} && !@missing_resources.include?(resource_id)
             @missing_resources << resource_id
         end
     end
 
     private def verify_file(file)
-        if !File.exists?(file)
+        if !File.exists?(file) && !@missing_files.include?(file)
             @missing_files << file
         end
     end
